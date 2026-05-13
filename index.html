@@ -157,11 +157,13 @@
 
     .btn-secondary {
       background: #fff;
-      color: #111;
+      color: #111111;
+      border: 1px solid #e5e5e5;
     }
 
     .btn-secondary:hover {
       background: #f1f1f1;
+      color: #111111;
     }
 
     .rating-link {
@@ -377,7 +379,7 @@
       border-radius: 16px;
       cursor: pointer;
       box-shadow: var(--shadow);
-      background: #000;
+      background: #ffffff;
       min-height: 280px;
     }
 
@@ -385,14 +387,15 @@
       width: 100%;
       height: 320px;
       object-fit: cover;
+      object-position: center;
       display: block;
-      background: #000;
-      transform: rotate(90deg);
+      background: #ffffff;
+      transform: none;
       transition: transform 0.3s ease, opacity 0.3s ease;
     }
 
     .gallery-item:hover img {
-      transform: rotate(90deg) scale(1.04);
+      transform: scale(1.04);
       opacity: 0.92;
     }
 
@@ -460,6 +463,18 @@
       margin-top: 22px;
     }
 
+    .contact-actions .btn-secondary {
+      color: #111111;
+      background: #ffffff;
+      border: 1px solid #ffffff;
+    }
+
+    .contact-actions .btn-secondary:hover {
+      color: #111111;
+      background: #f1f1f1;
+      border-color: #f1f1f1;
+    }
+
     .map-card {
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.12);
@@ -511,7 +526,8 @@
       display: block;
       box-shadow: 0 20px 50px rgba(0,0,0,0.35);
       object-fit: contain;
-      transform: rotate(90deg);
+      transform: none;
+      background: #ffffff;
     }
 
     .lightbox button {
@@ -672,7 +688,6 @@
       <img src="./imagens/1.png" alt="Logo Espaço M50" />
       <span>ESPAÇO M50</span>
     </a>
-
     <nav>
       <a href="#inicio">Início</a>
       <a href="#sobre">Sobre</a>
@@ -689,12 +704,10 @@
       <p>
         Um espaço pensado para quem quer envelhecer com autonomia, força, equilíbrio e qualidade de vida.
       </p>
-
       <div class="buttons">
         <a class="btn btn-primary" href="https://wa.me/55519990131230" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
         <a class="btn btn-secondary" href="https://maps.app.goo.gl/okXbcZ7eyXc6HTnS6" target="_blank" rel="noopener noreferrer">Como chegar</a>
       </div>
-
       <a class="rating-link" href="https://www.google.com/search?q=Espa%C3%A7o+M50+porto+alegre#lrd=0x9519797e49e4b89f:0x92654477bd73d1f7,1" target="_blank" rel="noopener noreferrer">
         ⭐ Veja nossas avaliações no Google
       </a>
@@ -708,18 +721,15 @@
       com atenção individualizada, escuta, segurança e estímulo à autonomia. Aqui, cada treino respeita a história,
       os limites e os objetivos de cada aluno.
     </p>
-
     <div class="cards">
       <div class="card">
         <h3>Atendimento próximo</h3>
         <p>Acompanhamento cuidadoso, com correções e orientação constante durante o treino.</p>
       </div>
-
       <div class="card">
         <h3>Ambiente acolhedor</h3>
         <p>Estrutura confortável, tranquila e preparada para receber quem busca saúde e bem-estar.</p>
       </div>
-
       <div class="card">
         <h3>Foco em longevidade</h3>
         <p>O objetivo é fortalecer o corpo para a vida real: mais mobilidade, equilíbrio e independência.</p>
@@ -733,18 +743,15 @@
       Trabalhamos com treinos personalizados e adaptados às necessidades do público 50+, considerando histórico,
       limitações, nível de condicionamento e metas individuais. O cuidado técnico caminha junto com o acolhimento.
     </p>
-
     <div class="cards">
       <div class="card">
         <h3>Avaliação individual</h3>
         <p>Entendemos o momento de cada aluno antes de iniciar qualquer proposta de treino.</p>
       </div>
-
       <div class="card">
         <h3>Progressão segura</h3>
         <p>Evolução gradual, respeitando o corpo e promovendo confiança em cada etapa.</p>
       </div>
-
       <div class="card">
         <h3>Treino com propósito</h3>
         <p>Cada exercício é pensado para melhorar a funcionalidade, a força e a autonomia no dia a dia.</p>
@@ -886,10 +893,6 @@
           title="Mapa da localização do Espaço M50"
         ></iframe>
       </div>
-    </div>
-
-    <div class="final-cta">
-      <a class="btn btn-primary" href="https://wa.me/55519990131230" target="_blank" rel="noopener noreferrer">QUERO MUDAR AGORA</a>
     </div>
   </section>
 
