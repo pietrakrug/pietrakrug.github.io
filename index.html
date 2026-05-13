@@ -13,12 +13,12 @@
 
     :root {
       --bg: #ffffff;
-      --bg-soft: #f6f6f6;
+      --bg-soft: #f7f7f7;
       --text: #111111;
       --text-soft: #5c5c5c;
       --red: #a10f1a;
       --red-dark: #7f0c15;
-      --red-soft: #f7e8ea;
+      --red-soft: #f8e8ea;
       --black: #111111;
       --white: #ffffff;
       --border: #e7d9db;
@@ -76,8 +76,8 @@
     .hero {
       min-height: 88vh;
       background:
-        linear-gradient(rgba(17, 17, 17, 0.60), rgba(17, 17, 17, 0.60)),
-        #1a1a1a url('imagens/6.png') no-repeat center center;
+        linear-gradient(rgba(17, 17, 17, 0.52), rgba(17, 17, 17, 0.52)),
+        #1a1a1a url('imagens/6.png') no-repeat right center;
       background-size: contain;
       display: flex;
       align-items: center;
@@ -215,15 +215,20 @@
       background: #ffffff;
     }
 
+    .modalities .cards {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 18px;
+    }
+
     .class-card {
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      min-height: 280px;
+      min-height: 100%;
     }
 
     .class-card p {
-      font-size: 16px;
+      font-size: 15px;
       color: var(--text-soft);
     }
 
@@ -315,7 +320,8 @@
     .calendar-empty {
       font-size: 14px;
       color: #8a6b6f;
-      margin-top: auto;
+      margin: auto 0;
+      text-align: center;
     }
 
     .calendar-legend {
@@ -339,10 +345,21 @@
       border-radius: 4px;
     }
 
-    .legend-alongamento { background: #b51d2a; }
-    .legend-yoga { background: #7f0c15; }
-    .legend-danca { background: #d83b4e; }
-    .legend-pilates { background: #8d1320; }
+    .legend-alongamento {
+      background: #b51d2a;
+    }
+
+    .legend-yoga {
+      background: #7f0c15;
+    }
+
+    .legend-danca {
+      background: #d83b4e;
+    }
+
+    .legend-pilates {
+      background: #8d1320;
+    }
 
     .space-section {
       background: #111111;
@@ -356,7 +373,7 @@
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 18px;
     }
 
@@ -374,14 +391,7 @@
       object-fit: cover;
       display: block;
       background: #000;
-    }
-
-    .rotate-90 {
-      transform: rotate(90deg) scale(1.28);
-    }
-
-    .rotate-270 {
-      transform: rotate(-90deg) scale(1.28);
+      transform: rotate(90deg) scale(1.22);
     }
 
     .partners {
@@ -538,6 +548,16 @@
       text-decoration: none;
     }
 
+    @media (max-width: 1200px) {
+      .modalities .cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 1100px) {
       .calendar-grid {
         grid-template-columns: repeat(3, minmax(180px, 1fr));
@@ -552,8 +572,8 @@
       }
 
       .hero {
-        background-size: contain;
         background-position: center top;
+        background-size: contain;
         padding-top: 120px;
       }
 
@@ -568,6 +588,10 @@
       .contact-grid {
         grid-template-columns: 1fr;
       }
+
+      .modalities .cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
     }
 
     @media (max-width: 700px) {
@@ -577,6 +601,10 @@
 
       .calendar-day {
         min-height: auto;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -601,6 +629,10 @@
       .btn {
         width: 100%;
         text-align: center;
+      }
+
+      .modalities .cards {
+        grid-template-columns: 1fr;
       }
 
       .gallery-item img {
@@ -833,14 +865,14 @@
     </p>
 
     <div class="gallery">
-      <div class="gallery-item"><img src="imagens/99246.jpg" alt="Fachada do Espaço M50" /></div>
-      <div class="gallery-item"><img src="imagens/99248.jpg" alt="Entrada do Espaço M50" /></div>
-      <div class="gallery-item"><img src="imagens/99249.jpg" alt="Vista externa do Espaço M50" /></div>
-      <div class="gallery-item"><img src="imagens/99247.jpg" alt="Vista interna da academia" /></div>
       <div class="gallery-item"><img src="imagens/99254.jpg" alt="Área de esteiras da academia" /></div>
       <div class="gallery-item"><img src="imagens/99238.jpg" alt="Área de pesos e equipamentos" /></div>
       <div class="gallery-item"><img src="imagens/99237.jpg" alt="Equipamentos da academia" /></div>
       <div class="gallery-item"><img src="imagens/99235.jpg" alt="Visão interna do espaço" /></div>
+      <div class="gallery-item"><img src="imagens/99246.jpg" alt="Fachada do Espaço M50" /></div>
+      <div class="gallery-item"><img src="imagens/99248.jpg" alt="Entrada do Espaço M50" /></div>
+      <div class="gallery-item"><img src="imagens/99249.jpg" alt="Vista externa do Espaço M50" /></div>
+      <div class="gallery-item"><img src="imagens/99247.jpg" alt="Vista interna da academia" /></div>
     </div>
   </section>
 
