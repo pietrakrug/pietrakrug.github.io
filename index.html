@@ -182,6 +182,45 @@
       color: #fff;
     }
 
+    .classes-calendar {
+      margin-top: 42px;
+      background-color: #fff;
+      border-radius: 18px;
+      padding: 28px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+    }
+
+    .calendar-title {
+      font-size: 26px;
+      margin-bottom: 18px;
+      color: #1f1f1f;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+    }
+
+    .calendar-day {
+      background-color: #f8f4ee;
+      border: 1px solid #e2d4c3;
+      border-radius: 14px;
+      padding: 18px;
+      min-height: 130px;
+    }
+
+    .calendar-day h4 {
+      font-size: 17px;
+      margin-bottom: 10px;
+      color: #6e5336;
+    }
+
+    .calendar-day p {
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
     .space-section {
       background-color: #efe7dc;
     }
@@ -335,6 +374,10 @@
         font-size: 30px;
       }
 
+      .calendar-title {
+        font-size: 22px;
+      }
+
       .btn {
         width: 100%;
         text-align: center;
@@ -424,13 +467,25 @@
   <section id="aulas">
     <h2 class="section-title">Aulas</h2>
     <p class="section-text">
-      Modalidades pensadas para promover mobilidade, força, bem-estar, coordenação e qualidade de vida
-      com acompanhamento atento e uma rotina sustentável.
+      Modalidades pensadas para promover saúde, movimento, bem-estar e autonomia, com acompanhamento
+      próximo e uma rotina acolhedora para o público 50+.
     </p>
 
     <div class="cards">
       <div class="card">
-        <h3>Yoga — Hatha e Vinyasa</h3>
+        <h3>Musculação Sênior</h3>
+        <p>
+          Treinamento semi personal com acompanhamento próximo e turmas reduzidas de até 3 alunos por horário,
+          garantindo atenção individual, mais segurança e treinos realmente personalizados.
+        </p>
+        <p>
+          A metodologia é adaptada para o público 50+, com foco em força, mobilidade, equilíbrio,
+          disposição e autonomia no dia a dia.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Yoga</h3>
         <p>
           Uma aula que combina equilíbrio, mobilidade, respiração e consciência corporal. O Hatha trabalha
           movimentos mais calmos e sustentados, enquanto o Vinyasa traz fluidez e dinamismo, promovendo
@@ -440,7 +495,7 @@
       </div>
 
       <div class="card">
-        <h3>Dança — Ritmos Atuais e Discoteca</h3>
+        <h3>Dança</h3>
         <p>
           Uma experiência leve, divertida e cheia de energia para movimentar o corpo e elevar o astral.
           A aula mistura músicas atuais com clássicos da discoteca, estimulando coordenação,
@@ -457,15 +512,36 @@
         </p>
         <p class="schedule">Segunda, Quarta e Sexta • 10h</p>
       </div>
+    </div>
 
-      <div class="card">
-        <h3>Mat Pilates</h3>
-        <p>
-          Método realizado no solo que fortalece o corpo de forma segura e controlada, com foco em postura,
-          equilíbrio, estabilidade e fortalecimento do core. Excelente para melhorar consciência corporal
-          e qualidade dos movimentos.
-        </p>
-        <p class="schedule">Terça • 7h</p>
+    <div class="classes-calendar">
+      <h3 class="calendar-title">Agenda semanal das aulas coletivas</h3>
+      <div class="calendar-grid">
+        <div class="calendar-day">
+          <h4>Segunda</h4>
+          <p>Alongamento • 10h</p>
+        </div>
+        <div class="calendar-day">
+          <h4>Terça</h4>
+          <p>Sem aula coletiva programada</p>
+        </div>
+        <div class="calendar-day">
+          <h4>Quarta</h4>
+          <p>Alongamento • 10h</p>
+        </div>
+        <div class="calendar-day">
+          <h4>Quinta</h4>
+          <p>Sem aula coletiva programada</p>
+        </div>
+        <div class="calendar-day">
+          <h4>Sexta</h4>
+          <p>Alongamento • 10h</p>
+        </div>
+        <div class="calendar-day">
+          <h4>Sábado</h4>
+          <p>Yoga • 9h30</p>
+          <p>Dança • 10h30</p>
+        </div>
       </div>
     </div>
   </section>
