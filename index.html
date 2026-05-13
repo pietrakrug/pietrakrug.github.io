@@ -327,6 +327,66 @@
       color: var(--white);
     }
 
+    .class-accordion {
+      padding: 18px 18px;
+    }
+
+    .class-accordion summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .class-accordion summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .summary-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .summary-left span:last-child {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--red);
+      line-height: 1.2;
+      text-align: left;
+    }
+
+    .featured .summary-left span:last-child {
+      color: var(--white);
+    }
+
+    .summary-indicator {
+      font-size: 26px;
+      line-height: 1;
+      color: var(--red);
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+
+    .featured .summary-indicator {
+      color: var(--white);
+    }
+
+    .class-accordion[open] .summary-indicator {
+      transform: rotate(45deg);
+    }
+
+    .class-content {
+      padding-top: 14px;
+    }
+
+    .class-content p {
+      margin: 0;
+    }
+
     .schedule-block {
       margin-top: 34px;
       background: var(--bg-soft);
@@ -839,14 +899,63 @@
 
       .modalities .cards,
       .cards,
-      .gallery,
       .contact-grid {
         grid-template-columns: 1fr;
       }
 
+      .modalities-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .class-accordion {
+        padding: 10px 12px;
+        border-radius: 14px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+      }
+
+      .class-accordion summary {
+        gap: 8px;
+      }
+
+      .summary-left {
+        gap: 10px;
+      }
+
+      .summary-left span:last-child {
+        font-size: 15px;
+      }
+
+      .class-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+        margin: 0;
+      }
+
+      .summary-indicator {
+        font-size: 20px;
+      }
+
+      .class-content {
+        padding-top: 10px;
+      }
+
+      .class-content p {
+        font-size: 13px;
+        line-height: 1.4;
+        text-align: left;
+      }
+
       .schedule-grid {
-        grid-template-columns: 1fr;
-        gap: 12px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .schedule-day {
+        min-height: auto;
       }
 
       .class-card,
@@ -909,9 +1018,16 @@
         padding: 9px 10px;
       }
 
+      .gallery.gallery-compact {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 8px;
+      }
+
       .gallery-item {
-        min-height: 240px;
-        height: 260px;
+        min-height: 88px;
+        height: 88px;
+        border-radius: 10px;
       }
 
       .gallery-item img,
@@ -1012,31 +1128,31 @@
     <section id="modalidades" class="modalities">
       <h2 class="section-title">Modalidades</h2>
       <p class="section-text">Oferecemos opções que combinam fortalecimento, mobilidade, postura, condicionamento e cuidado com o corpo, sempre com atenção especial ao público 50+.</p>
-      <div class="cards">
-        <div class="card class-card featured">
-          <h3>Musculação sênior</h3>
-          <p>Treinos voltados ao público 50+, com foco em força, autonomia, segurança e acompanhamento próximo. Acompanhamento semi-personal, com no máximo 3 alunos por professor.</p>
-        </div>
-        <div class="card class-card">
-          <div class="class-icon" aria-hidden="true">🧘</div>
-          <h3>Alongamento</h3>
-          <p>Aulas para melhorar mobilidade, flexibilidade, postura e conforto nos movimentos do dia a dia.</p>
-        </div>
-        <div class="card class-card">
-          <div class="class-icon" aria-hidden="true">🤸</div>
-          <h3>Mat Pilates</h3>
-          <p>Exercícios no solo com foco em consciência corporal, fortalecimento do centro do corpo e estabilidade.</p>
-        </div>
-        <div class="card class-card">
-          <div class="class-icon" aria-hidden="true">☯️</div>
-          <h3>Yoga</h3>
-          <p>Prática voltada à respiração, equilíbrio, mobilidade, concentração e bem-estar físico e mental.</p>
-        </div>
-        <div class="card class-card">
-          <div class="class-icon" aria-hidden="true">💃</div>
-          <h3>Dança</h3>
-          <p>Aulas leves e dinâmicas para estimular coordenação, ritmo, memória e prazer em se movimentar.</p>
-        </div>
+      <div class="cards modalities-list">
+        <details class="card class-card featured class-accordion" open>
+          <summary><span class="summary-left"><span class="class-icon" aria-hidden="true">🏋️</span><span>Musculação sênior</span></span><span class="summary-indicator">+</span></summary>
+          <div class="class-content"><p>Treinos voltados ao público 50+, com foco em força, autonomia, segurança e acompanhamento próximo. Acompanhamento semi-personal, com no máximo 3 alunos por professor.</p></div>
+        </details>
+
+        <details class="card class-card class-accordion">
+          <summary><span class="summary-left"><span class="class-icon" aria-hidden="true">🧘</span><span>Alongamento</span></span><span class="summary-indicator">+</span></summary>
+          <div class="class-content"><p>Aulas para melhorar mobilidade, flexibilidade, postura e conforto nos movimentos do dia a dia.</p></div>
+        </details>
+
+        <details class="card class-card class-accordion">
+          <summary><span class="summary-left"><span class="class-icon" aria-hidden="true">🤸</span><span>Mat Pilates</span></span><span class="summary-indicator">+</span></summary>
+          <div class="class-content"><p>Exercícios no solo com foco em consciência corporal, fortalecimento do centro do corpo e estabilidade.</p></div>
+        </details>
+
+        <details class="card class-card class-accordion">
+          <summary><span class="summary-left"><span class="class-icon" aria-hidden="true">☯️</span><span>Yoga</span></span><span class="summary-indicator">+</span></summary>
+          <div class="class-content"><p>Prática voltada à respiração, equilíbrio, mobilidade, concentração e bem-estar físico e mental.</p></div>
+        </details>
+
+        <details class="card class-card class-accordion">
+          <summary><span class="summary-left"><span class="class-icon" aria-hidden="true">💃</span><span>Dança</span></span><span class="summary-indicator">+</span></summary>
+          <div class="class-content"><p>Aulas leves e dinâmicas para estimular coordenação, ritmo, memória e prazer em se movimentar.</p></div>
+        </details>
       </div>
 
       <div id="horarios" class="schedule-block">
@@ -1075,7 +1191,7 @@
     <section id="galeria" class="gallery-section">
       <h2 class="section-title">Galeria</h2>
       <p class="section-text">Conheça o espaço do Espaço M50 e veja um pouco do ambiente preparado para acolher cada aluno com conforto e segurança.</p>
-      <div class="gallery">
+      <div class="gallery gallery-compact">
         <div class="gallery-item"><img src="./imagens/99235.jpg" alt="Ambiente Espaço M50 1" /></div>
         <div class="gallery-item"><img src="./imagens/99237.jpg" alt="Ambiente Espaço M50 2" /></div>
         <div class="gallery-item"><img src="./imagens/99238.jpg" alt="Ambiente Espaço M50 3" /></div>
