@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ESPAÇO M50</title>
   <style>
     * {
@@ -11,19 +11,34 @@
       box-sizing: border-box;
     }
 
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f6f6f6;
+      --text: #111111;
+      --text-soft: #5c5c5c;
+      --red: #a10f1a;
+      --red-dark: #7f0c15;
+      --red-soft: #f7e8ea;
+      --black: #111111;
+      --white: #ffffff;
+      --border: #e7d9db;
+      --shadow: 0 10px 30px rgba(0,0,0,0.08);
+      --radius: 18px;
+    }
+
     html {
       scroll-behavior: smooth;
     }
 
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background-color: #f6f1ea;
-      color: #2a2a2a;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
     }
 
     header {
-      background-color: #1c1c1c;
+      background: #0f0f0f;
       color: #fff;
       padding: 18px 8%;
       display: flex;
@@ -32,11 +47,12 @@
       position: sticky;
       top: 0;
       z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     .logo {
       font-size: 28px;
-      font-weight: bold;
+      font-weight: 700;
       letter-spacing: 1px;
     }
 
@@ -54,35 +70,34 @@
     }
 
     nav a:hover {
-      color: #c79b68;
+      color: #ffb3bb;
     }
 
     .hero {
       min-height: 88vh;
       background:
-        linear-gradient(rgba(0, 0, 0, 0.58), rgba(0, 0, 0, 0.58)),
-        url('imagens/6.png');
-      background-size: cover;
-      background-position: center;
+        linear-gradient(rgba(17, 17, 17, 0.60), rgba(17, 17, 17, 0.60)),
+        #1a1a1a url('imagens/6.png') no-repeat center center;
+      background-size: contain;
       display: flex;
       align-items: center;
-      padding: 0 8%;
+      padding: 60px 8%;
       color: #fff;
     }
 
     .hero-content {
-      max-width: 700px;
+      max-width: 720px;
     }
 
     .hero h1 {
-      font-size: 56px;
-      line-height: 1.08;
-      margin-bottom: 22px;
+      font-size: 58px;
+      line-height: 1.05;
+      margin-bottom: 20px;
     }
 
     .hero p {
       font-size: 21px;
-      margin-bottom: 30px;
+      margin-bottom: 28px;
       max-width: 620px;
     }
 
@@ -96,84 +111,98 @@
     .btn {
       display: inline-block;
       padding: 15px 26px;
-      border-radius: 10px;
+      border-radius: 12px;
       text-decoration: none;
       font-size: 16px;
-      font-weight: bold;
+      font-weight: 700;
       transition: 0.3s;
     }
 
     .btn-primary {
-      background-color: #b88652;
+      background: var(--red);
       color: #fff;
     }
 
     .btn-primary:hover {
-      background-color: #9f7347;
+      background: var(--red-dark);
     }
 
     .btn-secondary {
-      background-color: #fff;
-      color: #1c1c1c;
+      background: #fff;
+      color: #111;
     }
 
     .btn-secondary:hover {
-      background-color: #ececec;
+      background: #f1f1f1;
     }
 
-    .rating {
-      display: inline-block;
+    .rating-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
       padding: 10px 16px;
-      border: 1px solid rgba(255,255,255,0.25);
-      background-color: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.10);
       border-radius: 999px;
       font-size: 15px;
+      color: #fff;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .rating-link:hover {
+      background: rgba(255,255,255,0.16);
     }
 
     section {
-      padding: 85px 8%;
+      padding: 88px 8%;
       scroll-margin-top: 90px;
     }
 
     .section-title {
       font-size: 40px;
       margin-bottom: 18px;
-      color: #1f1f1f;
+      color: var(--black);
     }
 
     .section-text {
       font-size: 18px;
-      max-width: 900px;
+      max-width: 920px;
       margin-bottom: 40px;
+      color: var(--text-soft);
+    }
+
+    .intro-block {
+      background: var(--bg-soft);
     }
 
     .cards {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 24px;
     }
 
     .card {
-      background-color: #fff;
+      background: #fff;
       padding: 28px;
-      border-radius: 16px;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid #f0e3e5;
     }
 
     .card h3 {
       margin-bottom: 12px;
-      color: #b88652;
+      color: var(--red);
       font-size: 22px;
     }
 
-    .card .schedule {
-      margin-top: 14px;
-      font-weight: bold;
-      color: #6e5336;
+    .card p {
+      font-size: 16px;
+      color: var(--text-soft);
     }
 
     .methodology {
-      background-color: #1f1f1f;
+      background: #111111;
       color: #fff;
     }
 
@@ -182,100 +211,273 @@
       color: #fff;
     }
 
+    .modalities {
+      background: #ffffff;
+    }
+
+    .class-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 280px;
+    }
+
+    .class-card p {
+      font-size: 16px;
+      color: var(--text-soft);
+    }
+
     .classes-calendar {
-      margin-top: 42px;
-      background-color: #fff;
-      border-radius: 18px;
-      padding: 28px;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.08);
+      margin-top: 48px;
     }
 
     .calendar-title {
-      font-size: 26px;
-      margin-bottom: 18px;
-      color: #1f1f1f;
+      font-size: 28px;
+      margin-bottom: 12px;
+      color: #111;
+    }
+
+    .calendar-subtitle {
+      font-size: 16px;
+      color: var(--text-soft);
+      margin-bottom: 24px;
+    }
+
+    .calendar-board {
+      background: linear-gradient(180deg, #ffffff 0%, #faf5f6 100%);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: var(--shadow);
     }
 
     .calendar-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      grid-template-columns: repeat(6, minmax(120px, 1fr));
       gap: 16px;
     }
 
     .calendar-day {
-      background-color: #f8f4ee;
-      border: 1px solid #e2d4c3;
-      border-radius: 14px;
-      padding: 18px;
-      min-height: 130px;
+      background: #fff;
+      border: 1px solid #efe0e2;
+      border-radius: 18px;
+      padding: 16px;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
     }
 
     .calendar-day h4 {
-      font-size: 17px;
-      margin-bottom: 10px;
-      color: #6e5336;
+      font-size: 16px;
+      color: #5a3034;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #f0e1e3;
     }
 
-    .calendar-day p {
-      font-size: 15px;
-      line-height: 1.5;
+    .calendar-event {
+      border-radius: 14px;
+      padding: 12px;
+      color: #222;
     }
+
+    .calendar-event strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .calendar-event span {
+      display: block;
+      font-size: 14px;
+    }
+
+    .event-alongamento {
+      background: #f7e7e9;
+      border-left: 4px solid #b51d2a;
+    }
+
+    .event-yoga {
+      background: #f4e8ea;
+      border-left: 4px solid #7f0c15;
+    }
+
+    .event-danca {
+      background: #fdecef;
+      border-left: 4px solid #d83b4e;
+    }
+
+    .event-pilates {
+      background: #f3d8dc;
+      border-left: 4px solid #8d1320;
+    }
+
+    .calendar-empty {
+      font-size: 14px;
+      color: #8a6b6f;
+      margin-top: auto;
+    }
+
+    .calendar-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      color: #5a3034;
+    }
+
+    .legend-color {
+      width: 14px;
+      height: 14px;
+      border-radius: 4px;
+    }
+
+    .legend-alongamento { background: #b51d2a; }
+    .legend-yoga { background: #7f0c15; }
+    .legend-danca { background: #d83b4e; }
+    .legend-pilates { background: #8d1320; }
 
     .space-section {
-      background-color: #efe7dc;
+      background: #111111;
+      color: #fff;
+    }
+
+    .space-section .section-title,
+    .space-section .section-text {
+      color: #fff;
     }
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
       gap: 18px;
     }
 
-    .gallery img {
+    .gallery-item {
+      background: #1b1b1b;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .gallery-item img {
       width: 100%;
-      height: 280px;
+      height: 320px;
       object-fit: cover;
-      border-radius: 16px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      display: block;
+      background: #000;
+    }
+
+    .rotate-90 {
+      transform: rotate(90deg) scale(1.28);
+    }
+
+    .rotate-270 {
+      transform: rotate(-90deg) scale(1.28);
     }
 
     .partners {
-      background-color: #fff;
+      background: #fff;
     }
 
     .placeholder-box {
-      background-color: #f8f4ee;
-      border: 2px dashed #c9b199;
+      background: #faf5f6;
+      border: 2px dashed #d7b1b7;
       border-radius: 16px;
       padding: 40px;
       text-align: center;
       font-size: 18px;
-      color: #6e5b4a;
+      color: #7a5056;
     }
 
-    .testimonials {
-      background-color: #efe7dc;
+    .reviews {
+      background: #f7f7f7;
     }
 
-    .testimonial {
-      background-color: #fff;
-      padding: 28px;
-      border-radius: 16px;
-      box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
     }
 
-    .testimonial p {
-      margin-bottom: 18px;
+    .review-card {
+      background: #fff;
+      border-radius: 18px;
+      padding: 22px;
+      box-shadow: var(--shadow);
+      border: 1px solid #ececec;
     }
 
-    .testimonial strong {
-      color: #1c1c1c;
+    .review-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 14px;
+      gap: 12px;
+    }
+
+    .review-user {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .review-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .review-user strong {
       display: block;
-      margin-top: 8px;
+      font-size: 15px;
+      color: #111;
+    }
+
+    .review-user span {
+      font-size: 13px;
+      color: #777;
+    }
+
+    .google-badge {
+      font-size: 12px;
+      color: #666;
+      border: 1px solid #ececec;
+      border-radius: 999px;
+      padding: 6px 10px;
+      white-space: nowrap;
+    }
+
+    .review-stars {
+      color: #f4b400;
+      font-size: 16px;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+
+    .review-text {
+      font-size: 15px;
+      color: #444;
     }
 
     .contact {
-      background-color: #1c1c1c;
+      background: #111111;
       color: #fff;
     }
 
@@ -296,14 +498,15 @@
     }
 
     .contact-card {
-      background-color: #2a2a2a;
+      background: #1b1b1b;
       border-radius: 16px;
       padding: 28px;
+      border: 1px solid rgba(255,255,255,0.08);
     }
 
     .contact-card h3 {
       margin-bottom: 15px;
-      color: #d8ab77;
+      color: #ffb3bb;
     }
 
     .contact-card p {
@@ -312,7 +515,7 @@
 
     .contact-card a {
       text-decoration: none;
-      color: #d8ab77;
+      color: #ffb3bb;
     }
 
     iframe {
@@ -324,15 +527,21 @@
     }
 
     footer {
-      background-color: #111;
+      background: #0a0a0a;
       color: #fff;
       padding: 35px 8%;
       text-align: center;
     }
 
     footer a {
-      color: #d8ab77;
+      color: #ffb3bb;
       text-decoration: none;
+    }
+
+    @media (max-width: 1100px) {
+      .calendar-grid {
+        grid-template-columns: repeat(3, minmax(180px, 1fr));
+      }
     }
 
     @media (max-width: 900px) {
@@ -340,6 +549,12 @@
         flex-direction: column;
         gap: 18px;
         text-align: center;
+      }
+
+      .hero {
+        background-size: contain;
+        background-position: center top;
+        padding-top: 120px;
       }
 
       .hero h1 {
@@ -355,6 +570,16 @@
       }
     }
 
+    @media (max-width: 700px) {
+      .calendar-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .calendar-day {
+        min-height: auto;
+      }
+    }
+
     @media (max-width: 600px) {
       nav {
         justify-content: center;
@@ -362,7 +587,6 @@
 
       .hero {
         min-height: auto;
-        padding-top: 80px;
         padding-bottom: 80px;
       }
 
@@ -374,13 +598,13 @@
         font-size: 30px;
       }
 
-      .calendar-title {
-        font-size: 22px;
-      }
-
       .btn {
         width: 100%;
         text-align: center;
+      }
+
+      .gallery-item img {
+        height: 280px;
       }
     }
   </style>
@@ -392,10 +616,10 @@
     <nav>
       <a href="#inicio">Início</a>
       <a href="#metodologia">Metodologia</a>
-      <a href="#aulas">Aulas</a>
+      <a href="#modalidades">Modalidades</a>
       <a href="#espaco">Espaço</a>
       <a href="#parceiros">Parceiros</a>
-      <a href="#depoimentos">Depoimentos</a>
+      <a href="#depoimentos">Avaliações</a>
       <a href="#contato">Contato</a>
     </nav>
   </header>
@@ -413,11 +637,14 @@
         <a class="btn btn-secondary" href="#espaco">Conhecer o espaço</a>
       </div>
 
-      <div class="rating">★★★★★ 4.9 no Google</div>
+      <a class="rating-link" href="https://www.google.com/search?q=Espa%C3%A7o+M50+Porto+Alegre" target="_blank" rel="noopener noreferrer">
+        <span>★★★★★</span>
+        <span>4,9 no Google</span>
+      </a>
     </div>
   </section>
 
-  <section>
+  <section class="intro-block">
     <h2 class="section-title">Um espaço pensado para longevidade com movimento</h2>
     <p class="section-text">
       No ESPAÇO M50, o treino vai além da estética. Aqui, cada aluno encontra orientação próxima,
@@ -427,20 +654,20 @@
 
     <div class="cards">
       <div class="card">
-        <h3>Semi-personal</h3>
-        <p>Treinos com atenção individualizada, correções constantes e acompanhamento próximo.</p>
+        <h3>Semi-Personal</h3>
+        <p>Treinos com acompanhamento próximo e turmas reduzidas de até 3 alunos por professor, garantindo mais atenção, segurança e evolução personalizada.</p>
       </div>
       <div class="card">
-        <h3>Ambiente acolhedor</h3>
-        <p>Um espaço pensado para gerar segurança, constância e bem-estar no processo de treino.</p>
+        <h3>Especialistas em Longevidade</h3>
+        <p>Profissionais preparados para atender as necessidades do público 50+, com foco em saúde, prevenção, mobilidade e qualidade de vida.</p>
       </div>
       <div class="card">
-        <h3>Equipe atenta</h3>
-        <p>Profissionais preparados para orientar, adaptar e incentivar cada aluno com presença real.</p>
+        <h3>Ambiente Acolhedor</h3>
+        <p>Um espaço pensado para proporcionar conforto, segurança e motivação, tornando o treino mais leve, agradável e consistente.</p>
       </div>
       <div class="card">
-        <h3>Saúde e autonomia</h3>
-        <p>Um trabalho voltado para força, mobilidade, disposição e qualidade de vida no dia a dia.</p>
+        <h3>Saúde e Autonomia</h3>
+        <p>Treinos direcionados para fortalecer o corpo, melhorar a disposição e manter mais independência e qualidade de vida no dia a dia.</p>
       </div>
     </div>
   </section>
@@ -464,83 +691,135 @@
     </p>
   </section>
 
-  <section id="aulas">
-    <h2 class="section-title">Aulas</h2>
+  <section class="modalities" id="modalidades">
+    <h2 class="section-title">Modalidades</h2>
     <p class="section-text">
       Modalidades pensadas para promover saúde, movimento, bem-estar e autonomia, com acompanhamento
       próximo e uma rotina acolhedora para o público 50+.
     </p>
 
     <div class="cards">
-      <div class="card">
-        <h3>Musculação Sênior</h3>
-        <p>
-          Treinamento semi personal com acompanhamento próximo e turmas reduzidas de até 3 alunos por horário,
-          garantindo atenção individual, mais segurança e treinos realmente personalizados.
-        </p>
-        <p>
-          A metodologia é adaptada para o público 50+, com foco em força, mobilidade, equilíbrio,
-          disposição e autonomia no dia a dia.
-        </p>
+      <div class="card class-card">
+        <div>
+          <h3>Musculação Sênior</h3>
+          <p>
+            Treinamento semi personal com acompanhamento próximo e turmas reduzidas de até 3 alunos por horário,
+            garantindo atenção individual, mais segurança e treinos realmente personalizados.
+          </p>
+          <p>
+            A metodologia é adaptada para o público 50+, com foco em força, mobilidade, equilíbrio,
+            disposição e autonomia no dia a dia.
+          </p>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>Yoga</h3>
-        <p>
-          Uma aula que combina equilíbrio, mobilidade, respiração e consciência corporal. O Hatha trabalha
-          movimentos mais calmos e sustentados, enquanto o Vinyasa traz fluidez e dinamismo, promovendo
-          relaxamento, flexibilidade e bem-estar físico e mental.
-        </p>
-        <p class="schedule">Sábado • 9h30</p>
+      <div class="card class-card">
+        <div>
+          <h3>Yoga</h3>
+          <p>
+            Uma aula que combina equilíbrio, mobilidade, respiração e consciência corporal. O Hatha trabalha
+            movimentos mais calmos e sustentados, enquanto o Vinyasa traz fluidez e dinamismo, promovendo
+            relaxamento, flexibilidade e bem-estar físico e mental.
+          </p>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>Dança</h3>
-        <p>
-          Uma experiência leve, divertida e cheia de energia para movimentar o corpo e elevar o astral.
-          A aula mistura músicas atuais com clássicos da discoteca, estimulando coordenação,
-          condicionamento, memória e socialização.
-        </p>
-        <p class="schedule">Sábado • 10h30</p>
+      <div class="card class-card">
+        <div>
+          <h3>Dança</h3>
+          <p>
+            Uma experiência leve, divertida e cheia de energia para movimentar o corpo e elevar o astral.
+            A aula mistura músicas atuais com clássicos da discoteca, estimulando coordenação,
+            condicionamento, memória e socialização.
+          </p>
+        </div>
       </div>
 
-      <div class="card">
-        <h3>Alongamento</h3>
-        <p>
-          Aula focada em mobilidade, flexibilidade e alívio das tensões musculares do dia a dia.
-          Ideal para melhorar postura, reduzir desconfortos e aumentar a sensação de leveza e bem-estar corporal.
-        </p>
-        <p class="schedule">Segunda, Quarta e Sexta • 10h</p>
+      <div class="card class-card">
+        <div>
+          <h3>Alongamento</h3>
+          <p>
+            Aula focada em mobilidade, flexibilidade e alívio das tensões musculares do dia a dia.
+            Ideal para melhorar postura, reduzir desconfortos e aumentar a sensação de leveza e bem-estar corporal.
+          </p>
+        </div>
+      </div>
+
+      <div class="card class-card">
+        <div>
+          <h3>Mat Pilates</h3>
+          <p>
+            Aula realizada no solo com foco em fortalecimento do core, postura, equilíbrio, mobilidade
+            e consciência corporal. Uma prática segura e eficiente para melhorar a qualidade dos movimentos
+            e a estabilidade no dia a dia.
+          </p>
+        </div>
       </div>
     </div>
 
     <div class="classes-calendar">
       <h3 class="calendar-title">Agenda semanal das aulas coletivas</h3>
-      <div class="calendar-grid">
-        <div class="calendar-day">
-          <h4>Segunda</h4>
-          <p>Alongamento • 10h</p>
+      <p class="calendar-subtitle">
+        Visualização resumida da divisão semanal das aulas coletivas.
+      </p>
+
+      <div class="calendar-board">
+        <div class="calendar-grid">
+          <div class="calendar-day">
+            <h4>Segunda</h4>
+            <div class="calendar-event event-alongamento">
+              <strong>Alongamento</strong>
+              <span>10h</span>
+            </div>
+          </div>
+
+          <div class="calendar-day">
+            <h4>Terça</h4>
+            <div class="calendar-event event-pilates">
+              <strong>Mat Pilates</strong>
+              <span>7h</span>
+            </div>
+          </div>
+
+          <div class="calendar-day">
+            <h4>Quarta</h4>
+            <div class="calendar-event event-alongamento">
+              <strong>Alongamento</strong>
+              <span>10h</span>
+            </div>
+          </div>
+
+          <div class="calendar-day">
+            <h4>Quinta</h4>
+            <p class="calendar-empty">Sem aula coletiva programada</p>
+          </div>
+
+          <div class="calendar-day">
+            <h4>Sexta</h4>
+            <div class="calendar-event event-alongamento">
+              <strong>Alongamento</strong>
+              <span>10h</span>
+            </div>
+          </div>
+
+          <div class="calendar-day">
+            <h4>Sábado</h4>
+            <div class="calendar-event event-yoga">
+              <strong>Yoga</strong>
+              <span>9h30</span>
+            </div>
+            <div class="calendar-event event-danca">
+              <strong>Dança</strong>
+              <span>10h30</span>
+            </div>
+          </div>
         </div>
-        <div class="calendar-day">
-          <h4>Terça</h4>
-          <p>Sem aula coletiva programada</p>
-        </div>
-        <div class="calendar-day">
-          <h4>Quarta</h4>
-          <p>Alongamento • 10h</p>
-        </div>
-        <div class="calendar-day">
-          <h4>Quinta</h4>
-          <p>Sem aula coletiva programada</p>
-        </div>
-        <div class="calendar-day">
-          <h4>Sexta</h4>
-          <p>Alongamento • 10h</p>
-        </div>
-        <div class="calendar-day">
-          <h4>Sábado</h4>
-          <p>Yoga • 9h30</p>
-          <p>Dança • 10h30</p>
+
+        <div class="calendar-legend">
+          <div class="legend-item"><span class="legend-color legend-alongamento"></span><span>Alongamento</span></div>
+          <div class="legend-item"><span class="legend-color legend-pilates"></span><span>Mat Pilates</span></div>
+          <div class="legend-item"><span class="legend-color legend-yoga"></span><span>Yoga</span></div>
+          <div class="legend-item"><span class="legend-color legend-danca"></span><span>Dança</span></div>
         </div>
       </div>
     </div>
@@ -554,14 +833,14 @@
     </p>
 
     <div class="gallery">
-      <img src="imagens/99246.jpg" alt="Fachada do Espaço M50">
-      <img src="imagens/99248.jpg" alt="Entrada do Espaço M50">
-      <img src="imagens/99249.jpg" alt="Vista externa do Espaço M50">
-      <img src="imagens/99247.jpg" alt="Vista interna da academia">
-      <img src="imagens/99254.jpg" alt="Área de esteiras da academia">
-      <img src="imagens/99238.jpg" alt="Área de pesos e equipamentos">
-      <img src="imagens/99237.jpg" alt="Equipamentos da academia">
-      <img src="imagens/99235.jpg" alt="Visão interna do espaço">
+      <div class="gallery-item"><img src="imagens/99246.jpg" alt="Fachada do Espaço M50" /></div>
+      <div class="gallery-item"><img src="imagens/99248.jpg" alt="Entrada do Espaço M50" /></div>
+      <div class="gallery-item"><img src="imagens/99249.jpg" alt="Vista externa do Espaço M50" /></div>
+      <div class="gallery-item"><img src="imagens/99247.jpg" alt="Vista interna da academia" /></div>
+      <div class="gallery-item"><img src="imagens/99254.jpg" alt="Área de esteiras da academia" /></div>
+      <div class="gallery-item"><img src="imagens/99238.jpg" alt="Área de pesos e equipamentos" /></div>
+      <div class="gallery-item"><img src="imagens/99237.jpg" alt="Equipamentos da academia" /></div>
+      <div class="gallery-item"><img src="imagens/99235.jpg" alt="Visão interna do espaço" /></div>
     </div>
   </section>
 
@@ -576,26 +855,62 @@
     </div>
   </section>
 
-  <section class="testimonials" id="depoimentos">
-    <h2 class="section-title">Depoimentos</h2>
+  <section class="reviews" id="depoimentos">
+    <h2 class="section-title">Avaliações</h2>
     <p class="section-text">
-      A experiência dos nossos alunos traduz o que buscamos construir todos os dias: um espaço de cuidado, evolução e acolhimento.
+      Comentários de alunos em formato visual inspirado nas avaliações do Google.
     </p>
 
-    <div class="cards">
-      <div class="testimonial">
-        <p>“Comecei na academia buscando mais saúde, disposição e qualidade de vida — e encontrei muito mais! A equipe é super atenciosa, os professores têm paciência e preparo para trabalhar com a nossa faixa etária, respeitando nossos limites, mas também incentivando o progresso. Os treinos são personalizados, e o ambiente é acolhedor, sem aquela pressão ou competição que vemos em outras academias. Também tem as aulas de dança, mat pilates, alongamento e yoga. Recomendo muito para quem quer cuidar do corpo e da mente com segurança e motivação. Meus filhos também usufruem deste espaço. Parabéns à equipe!”</p>
-        <strong>Juciane Alessi</strong>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-user">
+            <div class="review-avatar">J</div>
+            <div>
+              <strong>Juciane Alessi</strong>
+              <span>avaliou no Google</span>
+            </div>
+          </div>
+          <div class="google-badge">Google</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          Comecei na academia buscando mais saúde, disposição e qualidade de vida — e encontrei muito mais. A equipe é super atenciosa, os professores têm paciência e preparo para trabalhar com a nossa faixa etária, respeitando nossos limites e incentivando o progresso.
+        </p>
       </div>
 
-      <div class="testimonial">
-        <p>“Sem dúvidas a melhor academia do bairro. O ambiente tem uma limpeza impecável, professores e equipe sempre prestativos para ajudar e com sorriso no rosto. Aparelhos de ótima qualidade e com a manutenção sempre em dia. Os equipamentos são bem distribuídos pela academia, o que faz não ocorrer aquela lotação em determinados ambientes. A vibe do lugar é ótima e os frequentadores são todos muito simpáticos também. Recomendo sem pensar duas vezes!”</p>
-        <strong>Silvio Streit</strong>
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-user">
+            <div class="review-avatar">S</div>
+            <div>
+              <strong>Silvio Streit</strong>
+              <span>avaliou no Google</span>
+            </div>
+          </div>
+          <div class="google-badge">Google</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          Sem dúvidas a melhor academia do bairro. O ambiente tem limpeza impecável, equipe sempre prestativa e aparelhos de ótima qualidade, com manutenção em dia e ótima distribuição no espaço.
+        </p>
       </div>
 
-      <div class="testimonial">
-        <p>“É sem dúvidas a melhor academia que já treinei! Os aparelhos e equipamentos são novos e de excelente qualidade. Além disso, os professores são extremamente engajados, montam treinos personalizados e acompanham de perto cada movimento, corrigindo sempre que necessário. Super recomendo!”</p>
-        <strong>Pri Milani</strong>
+      <div class="review-card">
+        <div class="review-top">
+          <div class="review-user">
+            <div class="review-avatar">P</div>
+            <div>
+              <strong>Pri Milani</strong>
+              <span>avaliou no Google</span>
+            </div>
+          </div>
+          <div class="google-badge">Google</div>
+        </div>
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">
+          É sem dúvidas a melhor academia que já treinei. Os aparelhos são excelentes, e os professores são extremamente engajados, montam treinos personalizados e acompanham de perto cada movimento.
+        </p>
       </div>
     </div>
   </section>
@@ -616,7 +931,7 @@
         <p><strong>Segunda a sexta:</strong> 6h às 22h</p>
         <p><strong>Sábado:</strong> 9h às 14h</p>
         <p><strong>Domingo e feriado:</strong> 9h às 12h30</p>
-        <br>
+        <br />
         <a class="btn btn-primary" href="https://wa.me/5551990131230?text=Olá!%20Vim%20pelo%20site%20do%20Espaço%20M50%20e%20quero%20conhecer%20o%20espaço." target="_blank" rel="noopener noreferrer">Chamar no WhatsApp</a>
       </div>
 
