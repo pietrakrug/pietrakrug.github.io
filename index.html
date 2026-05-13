@@ -267,27 +267,25 @@
     .class-card {
       display: flex;
       flex-direction: column;
-      min-height: 260px;
-      padding: 22px 18px;
+      min-height: auto;
+      padding: 16px 14px;
       text-align: center;
       align-items: stretch;
       justify-content: flex-start;
     }
 
     .class-card h3 {
-      font-size: 19px;
+      font-size: 18px;
       line-height: 1.2;
-      margin: 0 0 14px;
-      min-height: 46px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      margin: 0 0 8px;
+      min-height: auto;
+      display: block;
       text-align: center;
     }
 
     .class-card p {
       font-size: 13px;
-      line-height: 1.55;
+      line-height: 1.45;
       color: var(--text-soft);
       text-align: center;
       max-width: 100%;
@@ -317,9 +315,9 @@
     .class-card.featured {
       background: var(--red);
       border: 1px solid var(--red-dark);
-      min-height: 280px;
-      transform: scale(1.02);
-      justify-content: center;
+      min-height: auto;
+      transform: scale(1.01);
+      justify-content: flex-start;
     }
 
     .class-card.featured h3,
@@ -328,7 +326,7 @@
     }
 
     .class-accordion {
-      padding: 18px 18px;
+      padding: 14px 14px;
     }
 
     .class-accordion summary {
@@ -337,7 +335,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 12px;
+      gap: 10px;
     }
 
     .class-accordion summary::-webkit-details-marker {
@@ -347,15 +345,15 @@
     .summary-left {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
       min-width: 0;
     }
 
     .summary-left span:last-child {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--red);
-      line-height: 1.2;
+      line-height: 1.15;
       text-align: left;
     }
 
@@ -364,7 +362,7 @@
     }
 
     .summary-indicator {
-      font-size: 26px;
+      font-size: 22px;
       line-height: 1;
       color: var(--red);
       flex-shrink: 0;
@@ -380,11 +378,13 @@
     }
 
     .class-content {
-      padding-top: 14px;
+      padding-top: 10px;
     }
 
     .class-content p {
       margin: 0;
+      font-size: 13px;
+      line-height: 1.45;
     }
 
     .schedule-block {
@@ -1254,7 +1254,7 @@
           </div>
         </div>
         <div class="faq-item">
-          <button class="faq-question">Preciso agendar horário para todos os treinos? <span>+</span></button>
+          <button class="faq-question">Preciso agendar horário? <span>+</span></button>
           <div class="faq-answer">
             <p>É necessário o agendamento das duas primeiras aulas, para a realização do diagnóstico inicial. Após isso, é possível vir conforme sua disponibilidade de agenda permitir.</p>
           </div>
