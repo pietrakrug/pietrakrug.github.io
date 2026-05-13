@@ -470,485 +470,571 @@
     .contact-actions .btn-secondary {
       color: #111111;
       background: #ffffff;
-      border: 1px solid #ffffff;
+      border-color: transparent;
     }
 
     .contact-actions .btn-secondary:hover {
-      color: #111111;
-      background: #f1f1f1;
-      border-color: #f1f1f1;
+      background: #f0f0f0;
     }
 
-    .map-card {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 20px;
-      overflow: hidden;
-      min-height: 420px;
-    }
-
-    .map-card iframe {
+    .map-frame {
       width: 100%;
-      height: 100%;
-      min-height: 420px;
+      min-height: 100%;
       border: 0;
-      display: block;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      background: #fff;
+      min-height: 420px;
     }
 
-    footer {
-      background: #0b0b0b;
-      color: rgba(255,255,255,0.72);
-      text-align: center;
-      padding: 22px 8%;
-      font-size: 14px;
+    .faq-section {
+      background: var(--bg-soft);
     }
 
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.88);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      z-index: 2000;
+    .faq {
+      display: grid;
+      gap: 18px;
     }
 
-    .lightbox.open {
-      display: flex;
+    .faq-item {
+      background: #fff;
+      border-radius: 16px;
+      border: 1px solid #f0e3e5;
+      box-shadow: var(--shadow);
+      overflow: hidden;
     }
 
-    .lightbox img {
-      max-width: 88vh;
-      max-height: 92vw;
-      border-radius: 18px;
-      display: block;
-      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
-      object-fit: contain;
-      transform: rotate(90deg);
-      background: #ffffff;
-    }
-
-    .lightbox button {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      background: rgba(255,255,255,0.14);
-      color: #fff;
+    .faq-question {
+      width: 100%;
+      background: #fff;
+      color: #111111;
       border: none;
-      width: 48px;
-      height: 48px;
-      border-radius: 50%;
-      font-size: 24px;
+      text-align: left;
+      padding: 22px 24px;
+      font-size: 18px;
+      font-weight: 700;
       cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .faq-question span {
+      color: var(--red);
+      font-size: 24px;
+      line-height: 1;
       transition: 0.3s;
     }
 
-    .lightbox button:hover {
-      background: rgba(255,255,255,0.24);
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 24px;
+      color: var(--text-soft);
+      font-size: 16px;
     }
 
-    @media (max-width: 1200px) {
+    .faq-item.active .faq-answer {
+      max-height: 220px;
+      padding: 0 24px 22px;
+    }
+
+    .faq-item.active .faq-question span {
+      transform: rotate(45deg);
+    }
+
+    .final-cta-section {
+      background: linear-gradient(135deg, #111111, #2a0b0f);
+      color: #fff;
+      text-align: center;
+    }
+
+    .final-cta-section .section-title,
+    .final-cta-section .section-text {
+      color: #fff;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .final-cta {
+      justify-content: center;
+    }
+
+    footer {
+      background: #090909;
+      color: rgba(255,255,255,0.72);
+      text-align: center;
+      padding: 28px 8%;
+      font-size: 14px;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.82);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 2000;
+      padding: 24px;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+    }
+
+    .modal-content {
+      position: relative;
+      max-width: min(96vw, 1200px);
+      max-height: 92vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-content img {
+      max-width: 100%;
+      max-height: 92vh;
+      border-radius: 18px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.45);
+      background: #fff;
+      transform: none;
+    }
+
+    .modal-close,
+    .modal-nav {
+      position: absolute;
+      border: none;
+      background: rgba(255,255,255,0.16);
+      color: #fff;
+      cursor: pointer;
+      border-radius: 999px;
+      transition: 0.3s;
+      backdrop-filter: blur(4px);
+    }
+
+    .modal-close {
+      top: -14px;
+      right: -14px;
+      width: 44px;
+      height: 44px;
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .modal-nav {
+      top: 50%;
+      transform: translateY(-50%);
+      width: 52px;
+      height: 52px;
+      font-size: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-prev {
+      left: -70px;
+    }
+
+    .modal-next {
+      right: -70px;
+    }
+
+    .modal-close:hover,
+    .modal-nav:hover {
+      background: rgba(255,255,255,0.28);
+    }
+
+    @media (max-width: 1100px) {
       .modalities .cards {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .class-card.featured {
-        grid-column: span 2;
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
       .schedule-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
 
-      .gallery {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+      .modal-prev {
+        left: 10px;
       }
 
-      .contact-grid {
-        grid-template-columns: 1fr;
+      .modal-next {
+        right: 10px;
       }
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 780px) {
       header {
         flex-direction: column;
-        gap: 14px;
+        gap: 18px;
       }
 
       nav {
         justify-content: center;
       }
 
+      .hero {
+        min-height: auto;
+        padding: 90px 8% 70px;
+      }
+
       .hero h1 {
-        font-size: 42px;
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 18px;
       }
 
       .section-title {
         font-size: 32px;
       }
 
-      .modalities .cards,
-      .gallery {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .schedule-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .class-card.featured {
-        grid-column: span 2;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .hero {
-        min-height: auto;
-        padding: 54px 6% 70px;
-      }
-
       section {
-        padding: 70px 6%;
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-
-      .hero p,
-      .section-text,
-      .contact-card p,
-      .schedule-text {
-        font-size: 17px;
+        padding: 72px 8%;
       }
 
       .modalities .cards,
-      .gallery {
+      .cards,
+      .gallery,
+      .schedule-grid {
         grid-template-columns: 1fr;
       }
 
-      .schedule-block {
-        padding: 22px 16px;
+      .gallery-item {
+        min-height: 240px;
+        height: 260px;
       }
 
-      .schedule-grid {
-        display: flex;
-        gap: 14px;
-        overflow-x: auto;
-        scroll-snap-type: x mandatory;
-        padding-bottom: 4px;
-      }
-
-      .schedule-grid::-webkit-scrollbar {
-        height: 8px;
-      }
-
-      .schedule-grid::-webkit-scrollbar-thumb {
-        background: #d8c6c8;
-        border-radius: 999px;
-      }
-
-      .schedule-day {
-        min-width: 240px;
-        flex: 0 0 240px;
-        scroll-snap-align: start;
-      }
-
-      .class-card,
-      .class-card.featured {
-        grid-column: span 1;
-        min-height: auto;
+      .gallery-item img,
+      .gallery-item:hover img,
+      .modal-content img {
         transform: none;
       }
 
-      .class-card h3 {
-        min-height: auto;
-      }
-
-      .gallery-item {
-        height: 280px;
-      }
-
-      .gallery-item img {
-        width: 280px;
-        height: 100%;
-        transform: rotate(90deg);
-      }
-
-      .gallery-item:hover img {
-        transform: rotate(90deg) scale(1.04);
-      }
-
-      .lightbox button {
-        width: 42px;
-        height: 42px;
-      }
-
-      .map-card iframe {
+      .map-frame {
         min-height: 320px;
+      }
+
+      .modal-nav {
+        width: 44px;
+        height: 44px;
+      }
+
+      .modal-close {
+        top: 10px;
+        right: 10px;
       }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <a href="#inicio" class="logo">
-      <img src="./imagens/1.png" alt="Logo Espaço M50" />
+    <a href="#topo" class="logo">
+      <img src="./imagens/logo.png" alt="Logo Espaço M50" />
       <span>ESPAÇO M50</span>
     </a>
     <nav>
-      <a href="#inicio">Início</a>
       <a href="#sobre">Sobre</a>
       <a href="#metodologia">Metodologia</a>
       <a href="#modalidades">Modalidades</a>
-      <a href="#espaco">Nosso espaço</a>
+      <a href="#horarios">Horários</a>
+      <a href="#galeria">Galeria</a>
       <a href="#contato">Contato</a>
+      <a href="#faq">FAQ</a>
     </nav>
   </header>
 
-  <section class="hero" id="inicio">
-    <div class="hero-content">
-      <h1>Treino com segurança, acolhimento e resultado para o público 50+</h1>
-      <p>
-        Um espaço pensado para quem quer envelhecer com autonomia, força, equilíbrio e qualidade de vida.
-      </p>
-      <div class="buttons">
-        <a class="btn btn-primary" href="https://wa.me/55519990131230?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20M50%20e%20quero%20saber%20mais%20sobre%20os%20treinos." target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
-        <a class="btn btn-secondary" href="https://maps.app.goo.gl/okXbcZ7eyXc6HTnS6" target="_blank" rel="noopener noreferrer">Como chegar</a>
-      </div>
-      <a class="rating-link" href="https://www.google.com/search?q=Espa%C3%A7o+M50+porto+alegre#lrd=0x9519797e49e4b89f:0x92654477bd73d1f7,1" target="_blank" rel="noopener noreferrer">
-        ⭐ Veja nossas avaliações no Google
-      </a>
-    </div>
-  </section>
-
-  <section class="intro-block" id="sobre">
-    <h2 class="section-title">Sobre o Espaço M50</h2>
-    <p class="section-text">
-      O Espaço M50 nasceu com um propósito claro: oferecer um ambiente especializado para o público acima dos 50 anos,
-      com atenção individualizada, escuta, segurança e estímulo à autonomia. Aqui, cada treino respeita a história,
-      os limites e os objetivos de cada aluno.
-    </p>
-    <div class="cards">
-      <div class="card">
-        <h3>Atendimento próximo</h3>
-        <p>Acompanhamento cuidadoso, com correções e orientação constante durante o treino.</p>
-      </div>
-      <div class="card">
-        <h3>Ambiente acolhedor</h3>
-        <p>Estrutura confortável, tranquila e preparada para receber quem busca saúde e bem-estar.</p>
-      </div>
-      <div class="card">
-        <h3>Foco em longevidade</h3>
-        <p>O objetivo é fortalecer o corpo para a vida real: mais mobilidade, equilíbrio e independência.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="methodology" id="metodologia">
-    <h2 class="section-title">Nossa metodologia</h2>
-    <p class="section-text">
-      Trabalhamos com treinos personalizados e adaptados às necessidades do público 50+, considerando histórico,
-      limitações, nível de condicionamento e metas individuais. O cuidado técnico caminha junto com o acolhimento.
-    </p>
-    <div class="cards">
-      <div class="card">
-        <h3>Avaliação individual</h3>
-        <p>Entendemos o momento de cada aluno antes de iniciar qualquer proposta de treino.</p>
-      </div>
-      <div class="card">
-        <h3>Progressão segura</h3>
-        <p>Evolução gradual, respeitando o corpo e promovendo confiança em cada etapa.</p>
-      </div>
-      <div class="card">
-        <h3>Treino com propósito</h3>
-        <p>Cada exercício é pensado para melhorar a funcionalidade, a força e a autonomia no dia a dia.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="modalities" id="modalidades">
-    <h2 class="section-title">Modalidades</h2>
-    <p class="section-text">
-      Opções pensadas para diferentes necessidades, sempre com acompanhamento e adaptação ao perfil de cada aluno.
-    </p>
-
-    <div class="cards">
-      <div class="card class-card featured">
-        <h3>MUSCULAÇÃO SÊNIOR</h3>
-        <p>Treino personalizado com acompanhamento próximo, com no máximo 3 alunos por professor. Mais segurança, atenção individual e autonomia para a rotina do público 50+.</p>
-      </div>
-
-      <div class="card class-card">
-        <h3>YOGA</h3>
-        <p>Uma aula que combina equilíbrio, mobilidade, respiração e consciência corporal. O Hatha trabalha movimentos mais calmos e sustentados, enquanto o Vinyasa traz fluidez e dinamismo, promovendo relaxamento, flexibilidade e bem-estar físico e mental.</p>
-      </div>
-
-      <div class="card class-card">
-        <h3>DANÇA</h3>
-        <p>Uma experiência leve, divertida e cheia de energia para movimentar o corpo e elevar o astral. A aula mistura músicas atuais com clássicos da discoteca, estimulando coordenação, condicionamento, memória e socialização.</p>
-      </div>
-
-      <div class="card class-card">
-        <h3>ALONGAMENTO</h3>
-        <p>Aula focada em mobilidade, flexibilidade e alívio das tensões musculares do dia a dia. Ideal para melhorar postura, reduzir desconfortos e aumentar a sensação de leveza e bem-estar corporal.</p>
-      </div>
-
-      <div class="card class-card">
-        <h3>MAT PILATES</h3>
-        <p>Método realizado no solo que fortalece o corpo de forma segura e controlada, com foco em postura, equilíbrio, estabilidade e fortalecimento do core. Excelente para melhorar consciência corporal e qualidade dos movimentos.</p>
-      </div>
-    </div>
-
-    <div class="schedule-block">
-      <h3 class="schedule-title">Agenda semanal das aulas coletivas</h3>
-      <p class="schedule-text">Confira os horários das modalidades coletivas ao longo da semana.</p>
-
-      <div class="schedule-grid">
-        <div class="schedule-day">
-          <h4>Segunda</h4>
-          <div class="schedule-item">
-            <strong>Alongamento</strong>
-            10h
-          </div>
+  <main id="topo">
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Movimento, força e autonomia para 50+</h1>
+        <p>Um espaço pensado para quem quer treinar com segurança, acompanhamento profissional e foco em qualidade de vida.</p>
+        <div class="buttons">
+          <a class="btn btn-primary" href="https://wa.me/555190131230?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20M50%20e%20quero%20saber%20mais%20sobre%20os%20treinos." target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+          <a class="btn btn-secondary" href="#modalidades">Ver modalidades</a>
         </div>
+        <a class="rating-link" href="https://www.google.com/search?q=Espa%C3%A7o+M50+Porto+Alegre#lrd=0x95197969a12432ff:0x6dd8abf34f2a7f87,1,,,,"
+          target="_blank" rel="noopener noreferrer">⭐ 5,0 no Google</a>
+      </div>
+    </section>
 
-        <div class="schedule-day">
-          <h4>Terça</h4>
-          <div class="schedule-item">
-            <strong>Mat Pilates</strong>
-            7h
-          </div>
+    <section id="sobre" class="intro-block">
+      <h2 class="section-title">Um espaço acolhedor para continuar em movimento</h2>
+      <p class="section-text">No Espaço M50, acreditamos que envelhecer com saúde passa por manter o corpo ativo, forte e funcional. Nosso trabalho é direcionado ao público 50+, respeitando o ritmo, as necessidades e os objetivos de cada aluno.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Atendimento próximo</h3>
+          <p>Acompanhamento atento, ambiente humanizado e orientação constante em cada etapa do treino.</p>
         </div>
-
-        <div class="schedule-day">
-          <h4>Quarta</h4>
-          <div class="schedule-item">
-            <strong>Alongamento</strong>
-            10h
-          </div>
+        <div class="card">
+          <h3>Segurança no exercício</h3>
+          <p>Planejamento cuidadoso para promover força, mobilidade, equilíbrio e confiança no dia a dia.</p>
         </div>
-
-        <div class="schedule-day">
-          <h4>Quinta</h4>
-          <div class="schedule-item schedule-empty">
-            <strong>Sem aula coletiva</strong>
-            Sem programação neste dia
-          </div>
-        </div>
-
-        <div class="schedule-day">
-          <h4>Sexta</h4>
-          <div class="schedule-item">
-            <strong>Alongamento</strong>
-            10h
-          </div>
-        </div>
-
-        <div class="schedule-day">
-          <h4>Sábado</h4>
-          <div class="schedule-item">
-            <strong>Yoga</strong>
-            9h30
-          </div>
-          <div class="schedule-item">
-            <strong>Dança</strong>
-            10h30
-          </div>
+        <div class="card">
+          <h3>Resultados com propósito</h3>
+          <p>Mais autonomia, disposição e qualidade de vida para viver bem cada fase da vida.</p>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="gallery-section" id="espaco">
-    <h2 class="section-title">Conheça o nosso espaço</h2>
-    <p class="section-text">Um ambiente preparado para acolher, orientar e promover saúde com conforto e segurança.</p>
+    <section id="metodologia" class="methodology">
+      <h2 class="section-title">Metodologia pensada para longevidade</h2>
+      <p class="section-text">Cada treino é estruturado com foco em funcionalidade, fortalecimento global, prevenção de quedas, mobilidade e bem-estar. O objetivo não é apenas treinar, mas fazer isso com consistência, confiança e sentido.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Avaliação inicial</h3>
+          <p>Entendemos histórico, limitações, rotina e metas para montar uma proposta de treino coerente e segura.</p>
+        </div>
+        <div class="card">
+          <h3>Progressão individual</h3>
+          <p>Os exercícios evoluem de forma gradual, respeitando o momento de cada pessoa e valorizando pequenas conquistas.</p>
+        </div>
+        <div class="card">
+          <h3>Treino com supervisão</h3>
+          <p>Orientação próxima para corrigir movimentos, ajustar cargas e manter a prática confortável e eficiente.</p>
+        </div>
+      </div>
+    </section>
 
-    <div class="gallery">
-      <div class="gallery-item"><img src="./imagens/99235.jpg" alt="Espaço interno 1" /></div>
-      <div class="gallery-item"><img src="./imagens/99237.jpg" alt="Espaço interno 2" /></div>
-      <div class="gallery-item"><img src="./imagens/99238.jpg" alt="Espaço interno 3" /></div>
-      <div class="gallery-item"><img src="./imagens/99246.jpg" alt="Espaço interno 4" /></div>
-      <div class="gallery-item"><img src="./imagens/99247.jpg" alt="Espaço interno 5" /></div>
-      <div class="gallery-item"><img src="./imagens/99248.jpg" alt="Espaço interno 6" /></div>
-      <div class="gallery-item"><img src="./imagens/99249.jpg" alt="Espaço interno 7" /></div>
-      <div class="gallery-item"><img src="./imagens/99254.jpg" alt="Espaço interno 8" /></div>
-    </div>
-  </section>
-
-  <section class="contact" id="contato">
-    <h2 class="section-title">Contato</h2>
-    <p class="section-text">Agende uma conversa e venha conhecer o Espaço M50.</p>
-
-    <div class="contact-grid">
-      <div class="contact-card">
-        <p><strong>WhatsApp:</strong> <a href="https://wa.me/55519990131230?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20M50%20e%20quero%20saber%20mais%20sobre%20os%20treinos." target="_blank" rel="noopener noreferrer">(51) 99013-1230</a></p>
-        <p><strong>Instagram:</strong> <a href="https://www.instagram.com/espacom50/" target="_blank" rel="noopener noreferrer">@espacom50</a></p>
-        <p><strong>Endereço:</strong> Rua Hilário Ribeiro, 50 - Moinhos de Vento, Porto Alegre</p>
-
-        <div class="contact-actions">
-          <a class="btn btn-primary" href="https://wa.me/55519990131230?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20M50%20e%20quero%20saber%20mais%20sobre%20os%20treinos." target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
-          <a class="btn btn-secondary" href="https://maps.app.goo.gl/okXbcZ7eyXc6HTnS6" target="_blank" rel="noopener noreferrer">Abrir mapa</a>
+    <section id="modalidades" class="modalities">
+      <h2 class="section-title">Modalidades</h2>
+      <p class="section-text">Oferecemos opções que combinam fortalecimento, mobilidade, postura, condicionamento e cuidado com o corpo, sempre com atenção especial ao público 50+.</p>
+      <div class="cards">
+        <div class="card class-card featured">
+          <h3>Treinamento personalizado</h3>
+          <p>Atendimento individualizado, com planejamento específico para necessidades clínicas, funcionais e objetivos pessoais.</p>
+        </div>
+        <div class="card class-card">
+          <h3>Musculação orientada</h3>
+          <p>Fortalecimento com acompanhamento profissional para melhorar autonomia, resistência e segurança nas atividades diárias.</p>
+        </div>
+        <div class="card class-card">
+          <h3>Pilates</h3>
+          <p>Trabalho de mobilidade, consciência corporal, postura, estabilidade e alívio de desconfortos com atenção individual.</p>
+        </div>
+        <div class="card class-card">
+          <h3>Treino funcional</h3>
+          <p>Exercícios voltados ao equilíbrio, coordenação, agilidade e força aplicados à rotina e à independência funcional.</p>
+        </div>
+        <div class="card class-card">
+          <h3>Alongamento e mobilidade</h3>
+          <p>Práticas que contribuem para amplitude de movimento, menor rigidez corporal e mais conforto para se movimentar.</p>
         </div>
       </div>
 
-      <div class="map-card">
+      <div id="horarios" class="schedule-block">
+        <h3 class="schedule-title">Horários das aulas</h3>
+        <p class="schedule-text">Consulte a organização semanal das modalidades e encontre o melhor horário para sua rotina.</p>
+        <div class="schedule-grid">
+          <div class="schedule-day">
+            <h4>Segunda</h4>
+            <div class="schedule-item"><strong>07:00</strong> Musculação orientada</div>
+            <div class="schedule-item"><strong>08:00</strong> Pilates</div>
+            <div class="schedule-item"><strong>18:00</strong> Treino funcional</div>
+          </div>
+          <div class="schedule-day">
+            <h4>Terça</h4>
+            <div class="schedule-item"><strong>07:00</strong> Alongamento e mobilidade</div>
+            <div class="schedule-item"><strong>09:00</strong> Treinamento personalizado</div>
+            <div class="schedule-item"><strong>18:00</strong> Musculação orientada</div>
+          </div>
+          <div class="schedule-day">
+            <h4>Quarta</h4>
+            <div class="schedule-item"><strong>07:00</strong> Musculação orientada</div>
+            <div class="schedule-item"><strong>08:00</strong> Pilates</div>
+            <div class="schedule-item"><strong>18:00</strong> Treino funcional</div>
+          </div>
+          <div class="schedule-day">
+            <h4>Quinta</h4>
+            <div class="schedule-item"><strong>07:00</strong> Alongamento e mobilidade</div>
+            <div class="schedule-item"><strong>09:00</strong> Treinamento personalizado</div>
+            <div class="schedule-item"><strong>18:00</strong> Musculação orientada</div>
+          </div>
+          <div class="schedule-day">
+            <h4>Sexta</h4>
+            <div class="schedule-item"><strong>07:00</strong> Musculação orientada</div>
+            <div class="schedule-item"><strong>08:00</strong> Pilates</div>
+            <div class="schedule-item"><strong>17:00</strong> Treino funcional</div>
+          </div>
+          <div class="schedule-day">
+            <h4>Sábado</h4>
+            <div class="schedule-item"><strong>09:00</strong> Treino especial 50+</div>
+            <div class="schedule-item schedule-empty"><strong>-</strong> Consulte disponibilidade</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="galeria" class="gallery-section">
+      <h2 class="section-title">Galeria</h2>
+      <p class="section-text">Conheça um pouco do ambiente e da proposta do Espaço M50.</p>
+      <div class="gallery">
+        <div class="gallery-item"><img src="./imagens/1.jpeg" alt="Ambiente Espaço M50 1" /></div>
+        <div class="gallery-item"><img src="./imagens/2.jpeg" alt="Ambiente Espaço M50 2" /></div>
+        <div class="gallery-item"><img src="./imagens/3.jpeg" alt="Ambiente Espaço M50 3" /></div>
+        <div class="gallery-item"><img src="./imagens/4.jpeg" alt="Ambiente Espaço M50 4" /></div>
+        <div class="gallery-item"><img src="./imagens/5.jpeg" alt="Ambiente Espaço M50 5" /></div>
+        <div class="gallery-item"><img src="./imagens/6.jpeg" alt="Ambiente Espaço M50 6" /></div>
+        <div class="gallery-item"><img src="./imagens/7.jpeg" alt="Ambiente Espaço M50 7" /></div>
+        <div class="gallery-item"><img src="./imagens/8.jpeg" alt="Ambiente Espaço M50 8" /></div>
+      </div>
+    </section>
+
+    <section id="contato" class="contact">
+      <h2 class="section-title">Contato</h2>
+      <p class="section-text">Estamos prontos para ajudar você a encontrar a melhor forma de começar ou retomar sua rotina de exercícios com segurança.</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/555190131230?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20M50%20e%20quero%20saber%20mais%20sobre%20os%20treinos." target="_blank" rel="noopener noreferrer">(51) 99013-1230</a></p>
+          <p><strong>Instagram:</strong> <a href="https://www.instagram.com/espaco_m50/" target="_blank" rel="noopener noreferrer">@espaco_m50</a></p>
+          <p><strong>Endereço:</strong> Rua Marquês do Pombal, 1111 - Moinhos de Vento, Porto Alegre/RS</p>
+          <div class="contact-actions">
+            <a class="btn btn-primary" href="https://wa.me/555190131230?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20M50%20e%20quero%20saber%20mais%20sobre%20os%20treinos." target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+            <a class="btn btn-secondary" href="https://maps.google.com/?q=Rua+Marqu%C3%AAs+do+Pombal,+1111,+Porto+Alegre" target="_blank" rel="noopener noreferrer">Como chegar</a>
+          </div>
+        </div>
         <iframe
-          src="https://www.google.com/maps?q=Rua%20Hil%C3%A1rio%20Ribeiro%2C%2050%20-%20Moinhos%20de%20Vento%2C%20Porto%20Alegre&output=embed"
+          class="map-frame"
+          src="https://www.google.com/maps?q=Rua%20Marqu%C3%AAs%20do%20Pombal%2C%201111%2C%20Porto%20Alegre&output=embed"
           loading="lazy"
-          allowfullscreen
           referrerpolicy="no-referrer-when-downgrade"
-          title="Mapa da localização do Espaço M50"
-        ></iframe>
+          allowfullscreen
+          title="Mapa do Espaço M50"></iframe>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section id="faq" class="faq-section">
+      <h2 class="section-title">Perguntas frequentes</h2>
+      <p class="section-text">Algumas respostas para dúvidas comuns de quem quer começar.</p>
+      <div class="faq">
+        <div class="faq-item">
+          <button class="faq-question">Preciso já ter experiência com treino? <span>+</span></button>
+          <div class="faq-answer">
+            <p>Não. O acompanhamento é pensado para respeitar o seu nível atual e construir evolução com segurança.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">As aulas são voltadas apenas para idosos? <span>+</span></button>
+          <div class="faq-answer">
+            <p>O foco principal é o público 50+, mas cada pessoa é recebida de forma individual, considerando sua condição e objetivos.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">Posso treinar mesmo com limitações ou dores? <span>+</span></button>
+          <div class="faq-answer">
+            <p>Sim, desde que haja avaliação adequada. O planejamento considera necessidades específicas para tornar a prática mais segura e confortável.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta-section">
+      <h2 class="section-title">Seu corpo ainda tem muito para viver</h2>
+      <p class="section-text">Comece com acompanhamento, segurança e uma proposta de treino construída para a sua realidade.</p>
+      <div class="final-cta">
+        <a class="btn btn-primary" href="#contato">Agendar conversa</a>
+      </div>
+    </section>
+  </main>
 
   <footer>
-    © 2026 Espaço M50. Todos os direitos reservados.
+    <p>© 2026 Espaço M50. Todos os direitos reservados.</p>
   </footer>
 
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button id="closeLightbox" aria-label="Fechar imagem">×</button>
-    <img id="lightboxImage" src="" alt="Imagem ampliada do espaço" />
+  <div class="modal-overlay" id="imageModal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="closeModal" aria-label="Fechar imagem">&times;</button>
+      <button class="modal-nav modal-prev" id="prevModal" aria-label="Imagem anterior">&#10094;</button>
+      <img id="modalImage" src="" alt="Imagem ampliada da galeria" />
+      <button class="modal-nav modal-next" id="nextModal" aria-label="Próxima imagem">&#10095;</button>
+    </div>
   </div>
 
   <script>
-    const galleryItems = document.querySelectorAll('.gallery-item img');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImage = document.getElementById('lightboxImage');
-    const closeLightbox = document.getElementById('closeLightbox');
+    const faqItems = document.querySelectorAll('.faq-item');
 
-    galleryItems.forEach((img) => {
-      img.addEventListener('click', () => {
-        lightboxImage.src = img.src;
-        lightboxImage.alt = img.alt;
-        lightbox.classList.add('open');
-        lightbox.setAttribute('aria-hidden', 'false');
-        document.body.classList.add('modal-open');
+    faqItems.forEach((item) => {
+      const button = item.querySelector('.faq-question');
+      button.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+
+        faqItems.forEach((faq) => faq.classList.remove('active'));
+
+        if (!isActive) {
+          item.classList.add('active');
+        }
       });
     });
 
-    function closeModal() {
-      lightbox.classList.remove('open');
-      lightbox.setAttribute('aria-hidden', 'true');
-      lightboxImage.src = '';
-      document.body.classList.remove('modal-open');
+    const galleryImages = Array.from(document.querySelectorAll('.gallery-item img'));
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const closeModal = document.getElementById('closeModal');
+    const prevModal = document.getElementById('prevModal');
+    const nextModal = document.getElementById('nextModal');
+    let currentImageIndex = 0;
+
+    function openModal(index) {
+      currentImageIndex = index;
+      modalImage.src = galleryImages[currentImageIndex].src;
+      modalImage.alt = galleryImages[currentImageIndex].alt;
+      modal.classList.add('active');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
     }
 
-    closeLightbox.addEventListener('click', closeModal);
+    function closeImageModal() {
+      modal.classList.remove('active');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('modal-open');
+      modalImage.src = '';
+    }
 
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
-        closeModal();
+    function showNextImage() {
+      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+      modalImage.src = galleryImages[currentImageIndex].src;
+      modalImage.alt = galleryImages[currentImageIndex].alt;
+    }
+
+    function showPrevImage() {
+      currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+      modalImage.src = galleryImages[currentImageIndex].src;
+      modalImage.alt = galleryImages[currentImageIndex].alt;
+    }
+
+    galleryImages.forEach((image, index) => {
+      image.parentElement.addEventListener('click', () => openModal(index));
+    });
+
+    closeModal.addEventListener('click', closeImageModal);
+    nextModal.addEventListener('click', showNextImage);
+    prevModal.addEventListener('click', showPrevImage);
+
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        closeImageModal();
       }
     });
 
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && lightbox.classList.contains('open')) {
-        closeModal();
-      }
+    document.addEventListener('keydown', (event) => {
+      if (!modal.classList.contains('active')) return;
+
+      if (event.key === 'Escape') closeImageModal();
+      if (event.key === 'ArrowRight') showNextImage();
+      if (event.key === 'ArrowLeft') showPrevImage();
     });
   </script>
 </body>
