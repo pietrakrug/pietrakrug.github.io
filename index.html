@@ -124,10 +124,15 @@
       max-width: 560px;
     }
 
-    .buttons {
+    .buttons,
+    .contact-actions,
+    .final-cta {
       display: flex;
       gap: 14px;
       flex-wrap: wrap;
+    }
+
+    .buttons {
       margin-bottom: 22px;
     }
 
@@ -247,37 +252,112 @@
     .class-card {
       display: flex;
       flex-direction: column;
-      min-height: 230px;
-      padding: 20px 18px;
+      min-height: 260px;
+      padding: 22px 18px;
       text-align: center;
-      align-items: center;
-      justify-content: center;
+      align-items: stretch;
+      justify-content: flex-start;
     }
 
     .class-card h3 {
       font-size: 19px;
-      margin-bottom: 10px;
+      line-height: 1.2;
+      margin: 0 0 14px;
+      min-height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
     }
 
     .class-card p {
       font-size: 13px;
-      line-height: 1.5;
+      line-height: 1.55;
       color: var(--text-soft);
       text-align: center;
       max-width: 100%;
+      margin: 0;
     }
 
     .class-card.featured {
       background: var(--red);
       border: 1px solid var(--red-dark);
-      min-height: 255px;
+      min-height: 280px;
       transform: scale(1.02);
+      justify-content: center;
     }
 
     .class-card.featured h3,
     .class-card.featured p {
       color: var(--white);
+    }
+
+    .schedule-block {
+      margin-top: 34px;
+      background: var(--bg-soft);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 28px;
+      box-shadow: var(--shadow);
+    }
+
+    .schedule-title {
+      font-size: 28px;
+      color: var(--red);
+      margin-bottom: 10px;
+    }
+
+    .schedule-text {
+      color: var(--text-soft);
+      font-size: 16px;
+      margin-bottom: 22px;
+    }
+
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .schedule-day {
+      background: #fff;
+      border: 1px solid #f0e3e5;
+      border-radius: 18px;
+      padding: 18px;
+      min-height: 170px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+    }
+
+    .schedule-day h4 {
+      font-size: 18px;
+      color: var(--black);
+      margin: 0;
+    }
+
+    .schedule-item {
+      background: var(--red-soft);
+      color: var(--black);
+      border-left: 4px solid var(--red);
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: 14px;
+      line-height: 1.45;
+    }
+
+    .schedule-item strong {
+      display: block;
+      color: var(--red);
+      font-size: 13px;
+      margin-bottom: 3px;
+    }
+
+    .schedule-empty {
+      background: #f6f6f6;
+      color: var(--text-soft);
+      border-left: 4px solid #d3d3d3;
     }
 
     .gallery-section {
@@ -286,7 +366,7 @@
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 18px;
     }
 
@@ -345,8 +425,14 @@
       color: #fff;
     }
 
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, 420px) minmax(320px, 1fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
     .contact-card {
-      max-width: 760px;
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.12);
       padding: 32px;
@@ -355,7 +441,7 @@
 
     .contact-card p {
       font-size: 18px;
-      margin-bottom: 12px;
+      margin-bottom: 14px;
       color: rgba(255,255,255,0.9);
     }
 
@@ -367,6 +453,31 @@
 
     .contact-card a:hover {
       color: #ffb3bb;
+    }
+
+    .contact-actions {
+      margin-top: 22px;
+    }
+
+    .map-card {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 420px;
+    }
+
+    .map-card iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      border: 0;
+      display: block;
+    }
+
+    .final-cta {
+      margin-top: 30px;
+      justify-content: center;
     }
 
     footer {
@@ -430,8 +541,13 @@
         grid-column: span 2;
       }
 
+      .schedule-grid,
       .gallery {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -453,7 +569,9 @@
         font-size: 32px;
       }
 
-      .modalities .cards {
+      .modalities .cards,
+      .schedule-grid,
+      .gallery {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
@@ -477,22 +595,27 @@
       }
 
       .hero p,
-      .section-text {
+      .section-text,
+      .contact-card p,
+      .schedule-text {
         font-size: 17px;
       }
 
-      .modalities .cards {
+      .modalities .cards,
+      .schedule-grid,
+      .gallery {
         grid-template-columns: 1fr;
       }
 
+      .class-card,
       .class-card.featured {
         grid-column: span 1;
-        min-height: 230px;
+        min-height: auto;
         transform: none;
       }
 
-      .gallery {
-        grid-template-columns: 1fr;
+      .class-card h3 {
+        min-height: auto;
       }
 
       .gallery-item img {
@@ -502,6 +625,10 @@
       .lightbox button {
         width: 42px;
         height: 42px;
+      }
+
+      .map-card iframe {
+        min-height: 320px;
       }
     }
   </style>
@@ -531,31 +658,11 @@
       </p>
 
       <div class="buttons">
-        <a
-          class="btn btn-primary"
-          href="https://wa.me/5551997375377"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Falar no WhatsApp
-        </a>
-
-        <a
-          class="btn btn-secondary"
-          href="https://www.google.com/maps/place/Espa%C3%A7o+M50/@-30.0325982,-51.2135976,17z"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Como chegar
-        </a>
+        <a class="btn btn-primary" href="https://wa.me/55519990131230" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+        <a class="btn btn-secondary" href="https://maps.app.goo.gl/okXbcZ7eyXc6HTnS6" target="_blank" rel="noopener noreferrer">Como chegar</a>
       </div>
 
-      <a
-        class="rating-link"
-        href="https://www.google.com/search?q=Espa%C3%A7o+M50+porto+alegre#lrd=0x9519797e49e4b89f:0x92654477bd73d1f7,1"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <a class="rating-link" href="https://www.google.com/search?q=Espa%C3%A7o+M50+porto+alegre#lrd=0x9519797e49e4b89f:0x92654477bd73d1f7,1" target="_blank" rel="noopener noreferrer">
         ⭐ Veja nossas avaliações no Google
       </a>
     </div>
@@ -572,23 +679,17 @@
     <div class="cards">
       <div class="card">
         <h3>Atendimento próximo</h3>
-        <p>
-          Acompanhamento cuidadoso, com correções e orientação constante durante o treino.
-        </p>
+        <p>Acompanhamento cuidadoso, com correções e orientação constante durante o treino.</p>
       </div>
 
       <div class="card">
         <h3>Ambiente acolhedor</h3>
-        <p>
-          Estrutura confortável, tranquila e preparada para receber quem busca saúde e bem-estar.
-        </p>
+        <p>Estrutura confortável, tranquila e preparada para receber quem busca saúde e bem-estar.</p>
       </div>
 
       <div class="card">
         <h3>Foco em longevidade</h3>
-        <p>
-          O objetivo é fortalecer o corpo para a vida real: mais mobilidade, equilíbrio e independência.
-        </p>
+        <p>O objetivo é fortalecer o corpo para a vida real: mais mobilidade, equilíbrio e independência.</p>
       </div>
     </div>
   </section>
@@ -603,23 +704,17 @@
     <div class="cards">
       <div class="card">
         <h3>Avaliação individual</h3>
-        <p>
-          Entendemos o momento de cada aluno antes de iniciar qualquer proposta de treino.
-        </p>
+        <p>Entendemos o momento de cada aluno antes de iniciar qualquer proposta de treino.</p>
       </div>
 
       <div class="card">
         <h3>Progressão segura</h3>
-        <p>
-          Evolução gradual, respeitando o corpo e promovendo confiança em cada etapa.
-        </p>
+        <p>Evolução gradual, respeitando o corpo e promovendo confiança em cada etapa.</p>
       </div>
 
       <div class="card">
         <h3>Treino com propósito</h3>
-        <p>
-          Cada exercício é pensado para melhorar a funcionalidade, a força e a autonomia no dia a dia.
-        </p>
+        <p>Cada exercício é pensado para melhorar a funcionalidade, a força e a autonomia no dia a dia.</p>
       </div>
     </div>
   </section>
@@ -633,79 +728,135 @@
     <div class="cards">
       <div class="card class-card featured">
         <h3>MUSCULAÇÃO SÊNIOR</h3>
-        <p>
-          Treino personalizado com acompanhamento próximo, com no máximo 3 alunos por professor. Mais segurança, atenção individual e autonomia para a rotina do público 50+.
-        </p>
+        <p>Treino personalizado com acompanhamento próximo, com no máximo 3 alunos por professor. Mais segurança, atenção individual e autonomia para a rotina do público 50+.</p>
       </div>
 
       <div class="card class-card">
         <h3>YOGA</h3>
-        <p>
-          Uma aula que combina equilíbrio, mobilidade, respiração e consciência corporal. O Hatha trabalha movimentos mais calmos e sustentados, enquanto o Vinyasa traz fluidez e dinamismo, promovendo relaxamento, flexibilidade e bem-estar físico e mental.
-        </p>
+        <p>Uma aula que combina equilíbrio, mobilidade, respiração e consciência corporal. O Hatha trabalha movimentos mais calmos e sustentados, enquanto o Vinyasa traz fluidez e dinamismo, promovendo relaxamento, flexibilidade e bem-estar físico e mental.</p>
       </div>
 
       <div class="card class-card">
         <h3>DANÇA</h3>
-        <p>
-          Uma experiência leve, divertida e cheia de energia para movimentar o corpo e elevar o astral. A aula mistura músicas atuais com clássicos da discoteca, estimulando coordenação, condicionamento, memória e socialização.
-        </p>
+        <p>Uma experiência leve, divertida e cheia de energia para movimentar o corpo e elevar o astral. A aula mistura músicas atuais com clássicos da discoteca, estimulando coordenação, condicionamento, memória e socialização.</p>
       </div>
 
       <div class="card class-card">
         <h3>ALONGAMENTO</h3>
-        <p>
-          Aula focada em mobilidade, flexibilidade e alívio das tensões musculares do dia a dia. Ideal para melhorar postura, reduzir desconfortos e aumentar a sensação de leveza e bem-estar corporal.
-        </p>
+        <p>Aula focada em mobilidade, flexibilidade e alívio das tensões musculares do dia a dia. Ideal para melhorar postura, reduzir desconfortos e aumentar a sensação de leveza e bem-estar corporal.</p>
       </div>
 
       <div class="card class-card">
         <h3>MAT PILATES</h3>
-        <p>
-          Método realizado no solo que fortalece o corpo de forma segura e controlada, com foco em postura, equilíbrio, estabilidade e fortalecimento do core. Excelente para melhorar consciência corporal e qualidade dos movimentos.
-        </p>
+        <p>Método realizado no solo que fortalece o corpo de forma segura e controlada, com foco em postura, equilíbrio, estabilidade e fortalecimento do core. Excelente para melhorar consciência corporal e qualidade dos movimentos.</p>
+      </div>
+    </div>
+
+    <div class="schedule-block">
+      <h3 class="schedule-title">Agenda semanal das aulas coletivas</h3>
+      <p class="schedule-text">Confira os horários das modalidades coletivas ao longo da semana.</p>
+
+      <div class="schedule-grid">
+        <div class="schedule-day">
+          <h4>Segunda</h4>
+          <div class="schedule-item">
+            <strong>Alongamento</strong>
+            10h
+          </div>
+        </div>
+
+        <div class="schedule-day">
+          <h4>Terça</h4>
+          <div class="schedule-item">
+            <strong>Mat Pilates</strong>
+            7h
+          </div>
+        </div>
+
+        <div class="schedule-day">
+          <h4>Quarta</h4>
+          <div class="schedule-item">
+            <strong>Alongamento</strong>
+            10h
+          </div>
+        </div>
+
+        <div class="schedule-day">
+          <h4>Quinta</h4>
+          <div class="schedule-item schedule-empty">
+            <strong>Sem aula coletiva</strong>
+            Sem programação neste dia
+          </div>
+        </div>
+
+        <div class="schedule-day">
+          <h4>Sexta</h4>
+          <div class="schedule-item">
+            <strong>Alongamento</strong>
+            10h
+          </div>
+        </div>
+
+        <div class="schedule-day">
+          <h4>Sábado</h4>
+          <div class="schedule-item">
+            <strong>Yoga</strong>
+            9h30
+          </div>
+          <div class="schedule-item">
+            <strong>Dança</strong>
+            10h30
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="gallery-section" id="espaco">
     <h2 class="section-title">Conheça o nosso espaço</h2>
-    <p class="section-text">
-      Um ambiente preparado para acolher, orientar e promover saúde com conforto e segurança.
-    </p>
+    <p class="section-text">Um ambiente preparado para acolher, orientar e promover saúde com conforto e segurança.</p>
 
     <div class="gallery">
-      <div class="gallery-item">
-        <img src="./imagens/2.png" alt="Espaço interno 1" />
-      </div>
-      <div class="gallery-item">
-        <img src="./imagens/6.png" alt="Espaço interno 2" />
-      </div>
-      <div class="gallery-item">
-        <img src="./imagens/7.png" alt="Espaço interno 3" />
-      </div>
-      <div class="gallery-item">
-        <img src="./imagens/8.png" alt="Espaço interno 4" />
-      </div>
-      <div class="gallery-item">
-        <img src="./imagens/9.png" alt="Espaço interno 5" />
-      </div>
-      <div class="gallery-item">
-        <img src="./imagens/99235.jpg" alt="Espaço interno 6" />
-      </div>
+      <div class="gallery-item"><img src="./imagens/99235.jpg" alt="Espaço interno 1" /></div>
+      <div class="gallery-item"><img src="./imagens/99237.jpg" alt="Espaço interno 2" /></div>
+      <div class="gallery-item"><img src="./imagens/99238.jpg" alt="Espaço interno 3" /></div>
+      <div class="gallery-item"><img src="./imagens/99246.jpg" alt="Espaço interno 4" /></div>
+      <div class="gallery-item"><img src="./imagens/99247.jpg" alt="Espaço interno 5" /></div>
+      <div class="gallery-item"><img src="./imagens/99248.jpg" alt="Espaço interno 6" /></div>
+      <div class="gallery-item"><img src="./imagens/99249.jpg" alt="Espaço interno 7" /></div>
+      <div class="gallery-item"><img src="./imagens/99254.jpg" alt="Espaço interno 8" /></div>
     </div>
   </section>
 
   <section class="contact" id="contato">
     <h2 class="section-title">Contato</h2>
-    <p class="section-text">
-      Agende uma conversa e venha conhecer o Espaço M50.
-    </p>
+    <p class="section-text">Agende uma conversa e venha conhecer o Espaço M50.</p>
 
-    <div class="contact-card">
-      <p><strong>WhatsApp:</strong> <a href="https://wa.me/5551997375377" target="_blank" rel="noopener noreferrer">(51) 99737-5377</a></p>
-      <p><strong>Instagram:</strong> <a href="https://www.instagram.com/espacom50/" target="_blank" rel="noopener noreferrer">@espacom50</a></p>
-      <p><strong>Endereço:</strong> Rua Coronel Bordini, 707 - Moinhos de Vento, Porto Alegre/RS</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <p><strong>WhatsApp:</strong> <a href="https://wa.me/55519990131230" target="_blank" rel="noopener noreferrer">(51) 99013-1230</a></p>
+        <p><strong>Instagram:</strong> <a href="https://www.instagram.com/espacom50/" target="_blank" rel="noopener noreferrer">@espacom50</a></p>
+        <p><strong>Endereço:</strong> Rua Hilário Ribeiro, 50 - Moinhos de Vento, Porto Alegre</p>
+
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="https://wa.me/55519990131230" target="_blank" rel="noopener noreferrer">Falar no WhatsApp</a>
+          <a class="btn btn-secondary" href="https://maps.app.goo.gl/okXbcZ7eyXc6HTnS6" target="_blank" rel="noopener noreferrer">Abrir mapa</a>
+        </div>
+      </div>
+
+      <div class="map-card">
+        <iframe
+          src="https://www.google.com/maps?q=Rua%20Hil%C3%A1rio%20Ribeiro%2C%2050%20-%20Moinhos%20de%20Vento%2C%20Porto%20Alegre&output=embed"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa da localização do Espaço M50"
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="final-cta">
+      <a class="btn btn-primary" href="https://wa.me/55519990131230" target="_blank" rel="noopener noreferrer">QUERO MUDAR AGORA</a>
     </div>
   </section>
 
