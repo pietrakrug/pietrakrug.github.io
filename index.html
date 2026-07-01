@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-P4Q45M74');
-  </script>
-  <!-- End Google Tag Manager -->
-
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2061171317806479');
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2061171317806479&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- End Meta Pixel Code -->
-
   <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-P4Q45M74');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '2061171317806479');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=2061171317806479&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- End Meta Pixel Code -->
+
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ESPAÇO M50</title>
@@ -42,15 +42,19 @@
       :root {
         --bg: #ffffff;
         --bg-soft: #f7f7f7;
+        --bg-rose: #fbf6f7;
         --text: #111111;
         --text-soft: #5c5c5c;
+        --text-faint: #8b8b8b;
         --red: #a10f1a;
         --red-dark: #7f0c15;
         --red-soft: #f8e8ea;
         --black: #111111;
         --white: #ffffff;
         --border: #e7d9db;
+        --border-soft: #eee7e8;
         --shadow: 0 10px 30px rgba(0,0,0,0.08);
+        --shadow-soft: 0 8px 24px rgba(0,0,0,0.05);
         --radius: 18px;
       }
 
@@ -581,97 +585,162 @@
         pointer-events: none;
       }
 
-      .pricing-section {
-        background: var(--bg-soft);
+      .plans-section {
+        background: linear-gradient(180deg, #ffffff 0%, #fbf6f7 100%);
       }
 
-      .pricing-wrap {
+      .plans-shell {
+        background: rgba(255,255,255,0.82);
+        border: 1px solid var(--border-soft);
+        border-radius: 28px;
+        padding: 34px;
+        box-shadow: var(--shadow-soft);
+      }
+
+      .plans-grid {
         display: grid;
-        grid-template-columns: minmax(280px, 0.9fr) minmax(0, 1.1fr);
-        gap: 28px;
+        grid-template-columns: minmax(280px, 0.88fr) minmax(0, 1.12fr);
+        gap: 36px;
         align-items: start;
       }
 
-      .pricing-intro {
-        background: #111111;
-        color: #fff;
-        border-radius: 22px;
-        padding: 34px;
-        box-shadow: var(--shadow);
+      .plans-intro {
+        position: sticky;
+        top: 110px;
       }
 
-      .pricing-kicker {
-        display: inline-block;
-        font-size: 13px;
+      .plans-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
         font-weight: 700;
-        letter-spacing: 0.12em;
+        letter-spacing: 0.14em;
         text-transform: uppercase;
-        color: #ffb3bb;
-        margin-bottom: 14px;
-      }
-
-      .pricing-intro h3 {
-        font-size: 34px;
-        line-height: 1.1;
-        margin-bottom: 14px;
-      }
-
-      .pricing-intro p {
-        font-size: 16px;
-        color: rgba(255,255,255,0.82);
-        margin-bottom: 0;
-        max-width: 36ch;
-      }
-
-      .pricing-list {
-        display: grid;
-        gap: 16px;
-      }
-
-      .pricing-item {
-        background: #fff;
-        border: 1px solid #f0e3e5;
-        border-radius: 20px;
-        padding: 22px 24px;
-        box-shadow: var(--shadow);
-      }
-
-      .pricing-item-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: 16px;
-        flex-wrap: wrap;
-        margin-bottom: 10px;
-      }
-
-      .pricing-item h3 {
-        margin: 0;
-        font-size: 23px;
-        color: var(--black);
-        line-height: 1.2;
-      }
-
-      .pricing-value {
-        font-size: 18px;
-        font-weight: 700;
         color: var(--red);
-        white-space: nowrap;
+        margin-bottom: 18px;
       }
 
-      .pricing-item p {
-        margin: 0;
+      .plans-kicker::before {
+        content: "";
+        width: 28px;
+        height: 1px;
+        background: var(--red);
+        display: inline-block;
+      }
+
+      .plans-intro h3 {
+        font-size: 36px;
+        line-height: 1.08;
+        margin-bottom: 16px;
+        color: var(--black);
+        max-width: 12ch;
+      }
+
+      .plans-intro p {
         font-size: 16px;
         color: var(--text-soft);
+        max-width: 34ch;
+        margin-bottom: 22px;
       }
 
-      .pricing-item.featured {
-        background: linear-gradient(180deg, #ffffff, #fcf1f3);
-        border-color: #e7d9db;
+      .plans-note {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px 16px;
+        border-radius: 999px;
+        background: #fff;
+        border: 1px solid var(--border-soft);
+        color: var(--text-soft);
+        font-size: 14px;
       }
 
-      .pricing-item.featured .pricing-item-header h3 {
+      .plans-note strong {
         color: var(--red);
+      }
+
+      .plans-list {
+        display: grid;
+        gap: 0;
+        background: #fff;
+        border: 1px solid var(--border-soft);
+        border-radius: 24px;
+        overflow: hidden;
+      }
+
+      .plan-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 18px;
+        padding: 24px 26px;
+        border-bottom: 1px solid var(--border-soft);
+        transition: background 0.25s ease;
+      }
+
+      .plan-row:last-child {
+        border-bottom: none;
+      }
+
+      .plan-row:hover {
+        background: #fff9fa;
+      }
+
+      .plan-row.featured {
+        background: linear-gradient(90deg, rgba(161,15,26,0.05) 0%, rgba(161,15,26,0.02) 100%);
+      }
+
+      .plan-main {
+        display: grid;
+        gap: 8px;
+      }
+
+      .plan-main h3 {
+        font-size: 24px;
+        line-height: 1.15;
+        color: var(--black);
+        margin: 0;
+      }
+
+      .plan-main p {
+        margin: 0;
+        font-size: 15px;
+        color: var(--text-soft);
+        max-width: 60ch;
+      }
+
+      .plan-badge {
+        display: inline-flex;
+        align-items: center;
+        width: fit-content;
+        padding: 6px 12px;
+        border-radius: 999px;
+        background: var(--red-soft);
+        color: var(--red);
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+      }
+
+      .plan-price {
+        align-self: start;
+        justify-self: end;
+        text-align: right;
+        min-width: 180px;
+      }
+
+      .plan-price strong {
+        display: block;
+        font-size: 20px;
+        line-height: 1.1;
+        color: var(--red);
+        margin-bottom: 6px;
+      }
+
+      .plan-price span {
+        display: block;
+        font-size: 13px;
+        color: var(--text-faint);
       }
 
       .contact {
@@ -905,7 +974,8 @@
         }
 
         .contact-grid,
-        .pricing-wrap {
+        .plans-grid,
+        .about-showcase {
           grid-template-columns: 1fr;
         }
 
@@ -918,8 +988,8 @@
           grid-template-columns: repeat(3, minmax(0, 1fr));
         }
 
-        .about-showcase {
-          grid-template-columns: 1fr;
+        .plans-intro {
+          position: static;
         }
 
         .modal-prev {
@@ -978,11 +1048,7 @@
           content: "";
           position: absolute;
           inset: 0;
-          background: linear-gradient(
-            to bottom,
-            rgba(0,0,0,0.35),
-            rgba(0,0,0,0.68)
-          );
+          background: linear-gradient(to bottom, rgba(0,0,0,0.35), rgba(0,0,0,0.68));
           z-index: 1;
         }
 
@@ -1247,40 +1313,56 @@
           font-size: 9px;
         }
 
-        .pricing-intro {
-          padding: 24px 20px;
-          border-radius: 18px;
+        .plans-shell {
+          padding: 20px;
+          border-radius: 22px;
         }
 
-        .pricing-intro h3 {
+        .plans-grid {
+          gap: 26px;
+        }
+
+        .plans-intro h3 {
           font-size: 28px;
+          max-width: 100%;
         }
 
-        .pricing-list {
+        .plans-intro p {
+          font-size: 15px;
+        }
+
+        .plans-note {
+          width: 100%;
+          justify-content: center;
+          border-radius: 14px;
+          text-align: center;
+          line-height: 1.4;
+        }
+
+        .plan-row {
+          grid-template-columns: 1fr;
           gap: 12px;
+          padding: 20px 18px;
         }
 
-        .pricing-item {
-          padding: 18px;
-          border-radius: 16px;
+        .plan-main h3 {
+          font-size: 21px;
         }
 
-        .pricing-item-header {
-          flex-direction: column;
-          align-items: flex-start;
-          gap: 6px;
+        .plan-main p {
+          font-size: 14px;
         }
 
-        .pricing-item h3 {
-          font-size: 20px;
+        .plan-price {
+          justify-self: start;
+          text-align: left;
+          min-width: 0;
         }
 
-        .pricing-value {
-          font-size: 17px;
-          white-space: normal;
+        .plan-price strong {
+          font-size: 18px;
         }
 
-        .pricing-item p,
         .contact-card p {
           font-size: 15px;
         }
@@ -1554,83 +1636,110 @@
         </div>
       </section>
 
-      <section id="planos" class="pricing-section">
+      <section id="planos" class="plans-section">
         <h2 class="section-title">Planos e serviços</h2>
         <p class="section-text">
           Planos trimestrais, semestrais ou anuais para você escolher como prefere treinar.
         </p>
 
-        <div class="pricing-wrap">
-          <div class="pricing-intro">
-            <span class="pricing-kicker">Espaço M50</span>
-            <h3>Escolha a modalidade que faz sentido para a sua rotina</h3>
-            <p>
-              Opções pensadas para diferentes objetivos, com cuidado, acolhimento e atenção ao seu momento.
-            </p>
-          </div>
-
-          <div class="pricing-list">
-            <article class="pricing-item featured">
-              <div class="pricing-item-header">
-                <h3>Musculação Sênior</h3>
-                <span class="pricing-value">Valores a consultar</span>
-              </div>
+        <div class="plans-shell">
+          <div class="plans-grid">
+            <div class="plans-intro">
+              <span class="plans-kicker">Espaço M50</span>
+              <h3>Uma proposta clara, elegante e feita para a sua rotina</h3>
               <p>
-                Treinos com acompanhamento próximo, foco em força, autonomia, segurança e evolução respeitando o seu ritmo.
+                Organizamos nossas modalidades e atendimentos em uma apresentação mais objetiva, para facilitar sua escolha sem perder o cuidado da experiência M50.
               </p>
-            </article>
-
-            <article class="pricing-item">
-              <div class="pricing-item-header">
-                <h3>Yoga</h3>
-                <span class="pricing-value">Planos a partir de R$ 180</span>
+              <div class="plans-note">
+                <strong>Atendimento humanizado</strong> com opções em grupo e individuais.
               </div>
-              <p>Aulas em turmas 1x por semana ou com personal trainer.</p>
-            </article>
+            </div>
 
-            <article class="pricing-item">
-              <div class="pricing-item-header">
-                <h3>Mat Pilates</h3>
-                <span class="pricing-value">Planos a partir de R$ 180</span>
-              </div>
-              <p>Aulas em turmas 1x por semana ou com personal trainer.</p>
-            </article>
+            <div class="plans-list">
+              <article class="plan-row featured">
+                <div class="plan-main">
+                  <span class="plan-badge">Mais procurado</span>
+                  <h3>Musculação Sênior</h3>
+                  <p>
+                    Treinos com acompanhamento próximo, foco em força, autonomia, segurança e evolução respeitando o seu ritmo.
+                  </p>
+                </div>
+                <div class="plan-price">
+                  <strong>Valores a consultar</strong>
+                  <span>Planos trimestrais, semestrais ou anuais</span>
+                </div>
+              </article>
 
-            <article class="pricing-item">
-              <div class="pricing-item-header">
-                <h3>Dança</h3>
-                <span class="pricing-value">Planos a partir de R$ 180</span>
-              </div>
-              <p>Aulas em turmas 1x por semana.</p>
-            </article>
+              <article class="plan-row">
+                <div class="plan-main">
+                  <h3>Yoga</h3>
+                  <p>Aulas em turmas 1x por semana ou com personal trainer.</p>
+                </div>
+                <div class="plan-price">
+                  <strong>Planos a partir de R$ 180</strong>
+                  <span>Turmas ou atendimento individual</span>
+                </div>
+              </article>
 
-            <article class="pricing-item">
-              <div class="pricing-item-header">
-                <h3>Alongamento</h3>
-                <span class="pricing-value">Planos a partir de R$ 180</span>
-              </div>
-              <p>Aulas em turmas 1x, 2x ou 3x por semana.</p>
-            </article>
+              <article class="plan-row">
+                <div class="plan-main">
+                  <h3>Mat Pilates</h3>
+                  <p>Aulas em turmas 1x por semana ou com personal trainer.</p>
+                </div>
+                <div class="plan-price">
+                  <strong>Planos a partir de R$ 180</strong>
+                  <span>Turmas ou atendimento individual</span>
+                </div>
+              </article>
 
-            <article class="pricing-item">
-              <div class="pricing-item-header">
-                <h3>Massoterapia</h3>
-                <span class="pricing-value">Valores a consultar</span>
-              </div>
-              <p>
-                Diversas técnicas de massagem para relaxamento, melhora de contraturas e tratamentos estéticos.
-              </p>
-            </article>
+              <article class="plan-row">
+                <div class="plan-main">
+                  <h3>Dança</h3>
+                  <p>Aulas em turmas 1x por semana.</p>
+                </div>
+                <div class="plan-price">
+                  <strong>Planos a partir de R$ 180</strong>
+                  <span>Turmas regulares</span>
+                </div>
+              </article>
 
-            <article class="pricing-item">
-              <div class="pricing-item-header">
-                <h3>Fisioterapia</h3>
-                <span class="pricing-value">Valores a consultar</span>
-              </div>
-              <p>
-                Sessões com fisioterapeutas de diferentes especialidades de acordo com suas necessidades.
-              </p>
-            </article>
+              <article class="plan-row">
+                <div class="plan-main">
+                  <h3>Alongamento</h3>
+                  <p>Aulas em turmas 1x, 2x ou 3x por semana.</p>
+                </div>
+                <div class="plan-price">
+                  <strong>Planos a partir de R$ 180</strong>
+                  <span>Opções com diferentes frequências</span>
+                </div>
+              </article>
+
+              <article class="plan-row">
+                <div class="plan-main">
+                  <h3>Massoterapia</h3>
+                  <p>
+                    Diversas técnicas de massagem para relaxamento, melhora de contraturas e tratamentos estéticos.
+                  </p>
+                </div>
+                <div class="plan-price">
+                  <strong>Valores a consultar</strong>
+                  <span>Atendimento conforme necessidade</span>
+                </div>
+              </article>
+
+              <article class="plan-row">
+                <div class="plan-main">
+                  <h3>Fisioterapia</h3>
+                  <p>
+                    Sessões com fisioterapeutas de diferentes especialidades de acordo com suas necessidades.
+                  </p>
+                </div>
+                <div class="plan-price">
+                  <strong>Valores a consultar</strong>
+                  <span>Diferentes especialidades</span>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </section>
