@@ -1696,112 +1696,274 @@
         Estamos prontos para ajudar você a encontrar a melhor forma de começar ou retomar sua rotina de exercícios com segurança.
       </p>
 
-            <div class="contact-grid">
+               <style>
+        .contact-grid.contact-layout-full {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr);
+          width: 100%;
+          max-width: none;
+          gap: 24px;
+          box-sizing: border-box;
+        }
+
+        .contact-layout-full > .contact-card {
+          width: 100%;
+          max-width: none;
+          min-width: 0;
+          box-sizing: border-box;
+          grid-column: 1 / -1;
+        }
+
+        .contact-layout-full .contact-card p {
+          max-width: none;
+          overflow-wrap: anywhere;
+        }
+
+        .contact-layout-full .contact-actions,
+        .contact-layout-full .contact-directions {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
+          width: 100%;
+          box-sizing: border-box;
+        }
+
+        .contact-layout-full .contact-actions {
+          margin-top: 20px;
+        }
+
+        .contact-layout-full .contact-directions {
+          margin: 0;
+        }
+
+        .contact-layout-full .contact-actions .btn,
+        .contact-layout-full .contact-directions .btn {
+          margin: 0;
+          max-width: 100%;
+          box-sizing: border-box;
+          text-align: center;
+          white-space: normal;
+        }
+
+        .contact-layout-full .contact-maps {
+          display: grid;
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          gap: 24px;
+          width: 100%;
+          min-width: 0;
+        }
+
+        .contact-layout-full .contact-map-item {
+          min-width: 0;
+        }
+
+        .contact-layout-full .contact-map-title {
+          margin: 0 0 12px;
+          font-weight: 600;
+        }
+
+        .contact-layout-full .map-frame {
+          display: block;
+          width: 100%;
+          max-width: none;
+          height: 350px;
+          min-height: 0;
+          margin: 0;
+          border: 0;
+          border-radius: 16px;
+          box-sizing: border-box;
+        }
+
+        @media (max-width: 700px) {
+          .contact-layout-full .contact-maps {
+            grid-template-columns: minmax(0, 1fr);
+          }
+
+          .contact-layout-full .contact-actions,
+          .contact-layout-full .contact-directions {
+            flex-direction: column;
+            align-items: stretch;
+          }
+
+          .contact-layout-full .contact-actions .btn,
+          .contact-layout-full .contact-directions .btn {
+            width: 100%;
+          }
+
+          .contact-layout-full .map-frame {
+            height: 300px;
+          }
+        }
+      </style>
+
+      <div class="contact-grid contact-layout-full">
         <div class="contact-card">
-          <p><strong>Unidade Moinhos de Vento</strong><br>
-            WhatsApp: <a href="https://wa.me/555190131230?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20M50%20e%20quero%20saber%20mais%20sobre%20os%20treinos." target="_blank" rel="noopener noreferrer">(51) 90131-230</a><br>
-            Instagram: <a href="https://www.instagram.com/m50moinhos/" target="_blank" rel="noopener noreferrer">@m50moinhos</a>
+          <p>
+            <strong>Unidade Moinhos de Vento</strong><br>
+            WhatsApp:
+            <a
+              href="https://wa.me/555190131230?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20M50%20e%20quero%20saber%20mais%20sobre%20os%20treinos."
+              target="_blank"
+              rel="noopener noreferrer"
+            >(51) 90131-230</a><br>
+            Instagram:
+            <a
+              href="https://www.instagram.com/m50moinhos/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >@m50moinhos</a>
           </p>
-          <p><strong>Unidade Sarandi</strong><br>
-            WhatsApp: <a href="https://wa.me/555130236969?text=Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" rel="noopener noreferrer">(51) 3023-6969</a><br>
-            Instagram: <a href="https://www.instagram.com/m50luderitz/" target="_blank" rel="noopener noreferrer">@m50luderitz</a>
+
+          <p>
+            <strong>Unidade Sarandi</strong><br>
+            WhatsApp:
+            <a
+              href="https://wa.me/555130236969?text=Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es"
+              target="_blank"
+              rel="noopener noreferrer"
+            >(51) 3023-6969</a><br>
+            Instagram:
+            <a
+              href="https://www.instagram.com/m50luderitz/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >@m50luderitz</a>
           </p>
-          <p><strong>Endereços:</strong><br>
+
+          <p>
+            <strong>Endereços:</strong><br>
             Rua Hilário Ribeiro, 50 - Moinhos de Vento, Porto Alegre/RS<br>
             Rua Engenheiro João Luderitz, 490 - Sarandi, Porto Alegre/RS
           </p>
+
           <p>
             <strong>Funcionamento:</strong><br>
             Segunda a sexta - 6h às 22h<br>
-            Sábado - 9h às 14h
-            Domingo e feriado - 9H às 12h30 (somente unidade moinhos)
+            Sábado - 9h às 14h<br>
+            Domingo e feriado - 9h às 12h30
+            (somente unidade Moinhos de Vento)
           </p>
+
           <div class="contact-actions">
-            <a class="btn btn-primary" href="https://wa.me/555190131230?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20M50%20e%20quero%20saber%20mais%20sobre%20os%20treinos." target="_blank" rel="noopener noreferrer">
+            <a
+              class="btn btn-primary"
+              href="https://wa.me/555190131230?text=Ol%C3%A1%21%20Vim%20pelo%20site%20do%20Espa%C3%A7o%20M50%20e%20quero%20saber%20mais%20sobre%20os%20treinos."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Falar com Moinhos de Vento
             </a>
-            <a class="btn btn-primary" href="https://wa.me/555130236969?text=Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es" target="_blank" rel="noopener noreferrer">
+
+            <a
+              class="btn btn-primary"
+              href="https://wa.me/555130236969?text=Vim%20pelo%20site%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Falar com Sarandi
-            </a>
-            <a class="btn btn-secondary" href="https://maps.app.goo.gl/tUshFYBFV6w4yzFw5" target="_blank" rel="noopener noreferrer">
-              Como chegar - Sarandi
-            </a>
-          </div>
-        </div>
-      </div>
-      
-          </p>
-          <div class="contact-actions">
-  
-            <a class="btn btn-secondary" href="https://maps.google.com/?q=Rua+Hil%C3%A1rio+Ribeiro,+50,+Moinhos+de+Vento,+Porto+Alegre" target="_blank" rel="noopener noreferrer">
-              Como chegar - Moinhos de Vento
-            </a>
-            <a class="btn btn-secondary" href="https://maps.google.com/?q=Rua+Engenheiro+Jo%C3%A3o+Luderitz,+490,+Sarandi,+Porto+Alegre" target="_blank" rel="noopener noreferrer">
-              Como chegar - Sarandi
-            </a>
-          </div>
-      
-            <a class="btn btn-secondary" href="https://maps.google.com/?q=Rua+Hil%C3%A1rio+Ribeiro,+50,+Moinhos+de+Vento,+Porto+Alegre" target="_blank" rel="noopener noreferrer">
-              Como chegar
             </a>
           </div>
         </div>
 
-             <div class="map-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
-        <div>
-          <p style="margin: 0 0 .5rem; font-weight: 600;">Unidade Moinhos de Vento</p>
-          <iframe
-            class="map-frame"
-            src="https://www.google.com/maps?q=Rua%20Hil%C3%A1rio%20Ribeiro%2C%2050%2C%20Moinhos%20de%20Vento%2C%20Porto%20Alegre&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen
-            title="Mapa da unidade Moinhos de Vento do Espaço M50">
-          </iframe>
+        <div class="contact-directions">
+          <a
+            class="btn btn-secondary"
+            href="https://maps.google.com/?q=Rua+Hil%C3%A1rio+Ribeiro,+50,+Moinhos+de+Vento,+Porto+Alegre"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Como chegar - Moinhos de Vento
+          </a>
+
+          <a
+            class="btn btn-secondary"
+            href="https://maps.app.goo.gl/tUshFYBFV6w4yzFw5"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Como chegar - Sarandi
+          </a>
         </div>
-        <div>
-          <p style="margin: 0 0 .5rem; font-weight: 600;">Unidade Sarandi</p>
-          <iframe
-            class="map-frame"
-            src="https://www.google.com/maps?q=Rua%20Engenheiro%20Jo%C3%A3o%20Luderitz%2C%20490%2C%20Sarandi%2C%20Porto%20Alegre&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            allowfullscreen
-            title="Mapa da unidade Sarandi do Espaço M50">
-          </iframe>
+
+        <div class="contact-maps">
+          <div class="contact-map-item">
+            <p class="contact-map-title">
+              Unidade Moinhos de Vento
+            </p>
+
+            <iframe
+              class="map-frame"
+              src="https://www.google.com/maps?q=Rua%20Hil%C3%A1rio%20Ribeiro%2C%2050%2C%20Moinhos%20de%20Vento%2C%20Porto%20Alegre&amp;output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+              title="Mapa da unidade Moinhos de Vento do Espaço M50"
+            ></iframe>
+          </div>
+
+          <div class="contact-map-item">
+            <p class="contact-map-title">
+              Unidade Sarandi
+            </p>
+
+            <iframe
+              class="map-frame"
+              src="https://www.google.com/maps?q=Rua%20Engenheiro%20Jo%C3%A3o%20Luderitz%2C%20490%2C%20Sarandi%2C%20Porto%20Alegre&amp;output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+              title="Mapa da unidade Sarandi do Espaço M50"
+            ></iframe>
+          </div>
         </div>
-      </div>
       </div>
     </section>
 
     <section id="faq" class="faq-section">
       <h2 class="section-title">Perguntas frequentes</h2>
-      <p class="section-text">Algumas respostas para dúvidas comuns de quem quer começar.</p>
+      <p class="section-text">
+        Algumas respostas para dúvidas comuns de quem quer começar.
+      </p>
 
       <div class="faq">
         <div class="faq-item">
-          <button class="faq-question">Como funciona a experiência inicial? <span>+</span></button>
+          <button class="faq-question">
+            Como funciona a experiência inicial? <span>+</span>
+          </button>
           <div class="faq-answer">
             <p>
-              Antes de iniciar qualquer treino, o aluno passa por um diagnóstico inicial. Este diagnóstico contempla uma série de testes físicos e questionários para identificar as necessidades e limitações fisiológicas de cada perfil.
+              Antes de iniciar qualquer treino, o aluno passa por um
+              diagnóstico inicial. Este diagnóstico contempla uma série
+              de testes físicos e questionários para identificar as
+              necessidades e limitações fisiológicas de cada perfil.
             </p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">Preciso agendar horário para todos os treinos? <span>+</span></button>
+          <button class="faq-question">
+            Preciso agendar horário para todos os treinos? <span>+</span>
+          </button>
           <div class="faq-answer">
             <p>
-              É necessário o agendamento das duas primeiras aulas, para a realização do diagnóstico inicial. Após isso, é possível vir conforme sua disponibilidade de agenda permitir.
+              É necessário o agendamento das duas primeiras aulas, para
+              a realização do diagnóstico inicial. Após isso, é possível
+              vir conforme sua disponibilidade de agenda permitir.
             </p>
           </div>
         </div>
 
         <div class="faq-item">
-          <button class="faq-question">Nunca treinei ou estou há muito tempo parado. Posso começar? <span>+</span></button>
+          <button class="faq-question">
+            Nunca treinei ou estou há muito tempo parado. Posso começar?
+            <span>+</span>
+          </button>
           <div class="faq-answer">
             <p>
-              Sim. O atendimento no Espaço M50 é pensado justamente para respeitar o seu momento atual. Antes de iniciar, avaliamos seu perfil, suas necessidades e possíveis limitações para montar uma proposta segura, gradual e adequada à sua rotina.
+              Sim. O atendimento no Espaço M50 é pensado justamente para
+              respeitar o seu momento atual. Antes de iniciar, avaliamos
+              seu perfil, suas necessidades e possíveis limitações para
+              montar uma proposta segura, gradual e adequada à sua rotina.
             </p>
           </div>
         </div>
@@ -1809,12 +1971,17 @@
     </section>
 
     <section class="final-cta-section">
-      <h2 class="section-title">Seu corpo ainda tem muito para viver</h2>
+      <h2 class="section-title">
+        Seu corpo ainda tem muito para viver
+      </h2>
       <p class="section-text">
-        Comece com acompanhamento, segurança e uma proposta de treino construída para a sua realidade.
+        Comece com acompanhamento, segurança e uma proposta de treino
+        construída para a sua realidade.
       </p>
       <div class="final-cta">
-        <a class="btn btn-primary" href="#contato">Agendar conversa</a>
+        <a class="btn btn-primary" href="#contato">
+          Agendar conversa
+        </a>
       </div>
     </section>
   </main>
@@ -1825,32 +1992,55 @@
 
   <div class="modal-overlay" id="imageModal" aria-hidden="true">
     <div class="modal-content">
-      <button class="modal-close" id="closeModal" aria-label="Fechar imagem">×</button>
-      <button class="modal-nav modal-prev" id="prevModal" aria-label="Imagem anterior">❮</button>
+      <button
+        class="modal-close"
+        id="closeModal"
+        aria-label="Fechar imagem"
+      >×</button>
+
+      <button
+        class="modal-nav modal-prev"
+        id="prevModal"
+        aria-label="Imagem anterior"
+      >❮</button>
+
       <img id="modalImage" src="" alt="Imagem ampliada da galeria" />
-      <button class="modal-nav modal-next" id="nextModal" aria-label="Próxima imagem">❯</button>
+
+      <button
+        class="modal-nav modal-next"
+        id="nextModal"
+        aria-label="Próxima imagem"
+      >❯</button>
     </div>
   </div>
 
   <script>
     const faqItems = document.querySelectorAll('.faq-item');
+
     faqItems.forEach((item) => {
       const button = item.querySelector('.faq-question');
+
       button.addEventListener('click', () => {
         const isActive = item.classList.contains('active');
+
         faqItems.forEach((faq) => faq.classList.remove('active'));
+
         if (!isActive) {
           item.classList.add('active');
         }
       });
     });
 
-    const galleryImages = Array.from(document.querySelectorAll('.gallery-item img'));
+    const galleryImages = Array.from(
+      document.querySelectorAll('.gallery-item img')
+    );
+
     const modal = document.getElementById('imageModal');
     const modalImage = document.getElementById('modalImage');
     const closeModal = document.getElementById('closeModal');
     const prevModal = document.getElementById('prevModal');
     const nextModal = document.getElementById('nextModal');
+
     let currentImageIndex = 0;
 
     function openModal(index) {
@@ -1870,19 +2060,26 @@
     }
 
     function showNextImage() {
-      currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+      currentImageIndex =
+        (currentImageIndex + 1) % galleryImages.length;
+
       modalImage.src = galleryImages[currentImageIndex].src;
       modalImage.alt = galleryImages[currentImageIndex].alt;
     }
 
     function showPrevImage() {
-      currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+      currentImageIndex =
+        (currentImageIndex - 1 + galleryImages.length) %
+        galleryImages.length;
+
       modalImage.src = galleryImages[currentImageIndex].src;
       modalImage.alt = galleryImages[currentImageIndex].alt;
     }
 
     galleryImages.forEach((image, index) => {
-      image.parentElement.addEventListener('click', () => openModal(index));
+      image.parentElement.addEventListener('click', () => {
+        openModal(index);
+      });
     });
 
     closeModal.addEventListener('click', closeImageModal);
@@ -1897,12 +2094,14 @@
 
     document.addEventListener('keydown', (event) => {
       if (!modal.classList.contains('active')) return;
+
       if (event.key === 'Escape') closeImageModal();
       if (event.key === 'ArrowRight') showNextImage();
       if (event.key === 'ArrowLeft') showPrevImage();
     });
 
     const modalityItems = document.querySelectorAll('.class-accordion');
+
     modalityItems.forEach((item) => {
       item.addEventListener('toggle', () => {
         if (item.open) {
