@@ -345,47 +345,6 @@
       color: #fff;
     }
 
-    .modalities {
-      background: #ffffff;
-    }
-
-    .class-card {
-      display: block;
-      min-height: unset;
-      padding: 0;
-      text-align: left;
-      overflow: hidden;
-    }
-
-    .class-card.featured {
-      background: var(--red);
-      border: 1px solid var(--red-dark);
-      transform: none;
-    }
-
-    .class-card.featured h3,
-    .class-card.featured p {
-      color: var(--white);
-    }
-
-    .class-accordion {
-      padding: 0;
-    }
-
-    .class-accordion summary {
-      list-style: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding: 16px 14px;
-      min-height: 92px;
-    }
-
-    .class-accordion summary::-webkit-details-marker {
-      display: none;
-    }
 
     .summary-left {
       display: flex;
@@ -1120,107 +1079,6 @@
         font-size: 24px;
       }
 
-      .modalities-list {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .class-accordion {
-        padding: 10px 12px;
-        border-radius: 14px;
-        box-shadow: 0 4px 14px rgba(0,0,0,0.06);
-      }
-
-      .class-accordion summary {
-        gap: 8px;
-      }
-
-      .summary-left {
-        gap: 10px;
-      }
-
-      .summary-left span:last-child {
-        font-size: 15px;
-      }
-
-      .class-icon {
-        width: 36px;
-        height: 36px;
-        min-width: 36px;
-        font-size: 18px;
-        margin: 0;
-      }
-
-      .summary-indicator {
-        font-size: 20px;
-      }
-
-      .class-content {
-        padding-top: 10px;
-      }
-
-      .class-content p {
-        font-size: 13px;
-        line-height: 1.4;
-        text-align: left;
-      }
-
-      .schedule-grid {
-        display: flex;
-        flex-direction: row;
-        gap: 10px;
-        overflow-x: auto;
-        padding-bottom: 6px;
-        scroll-snap-type: x proximity;
-      }
-
-      .schedule-grid::-webkit-scrollbar {
-        height: 6px;
-      }
-
-      .schedule-grid::-webkit-scrollbar-thumb {
-        background: rgba(161, 15, 26, 0.28);
-        border-radius: 999px;
-      }
-
-      .schedule-day {
-        min-height: auto;
-        min-width: 170px;
-        flex: 0 0 170px;
-        scroll-snap-align: start;
-      }
-
-      .class-card,
-      .class-card.featured,
-      .schedule-day,
-      .contact-card {
-        min-height: auto;
-      }
-
-      .modalities .cards {
-        gap: 16px;
-      }
-
-      .class-card {
-        padding: 20px 16px;
-        border-radius: 16px;
-      }
-
-      .class-card h3 {
-        min-height: auto;
-        font-size: 20px;
-        margin-bottom: 10px;
-      }
-
-      .class-card p {
-        font-size: 14px;
-      }
-
-      .class-card.featured {
-        transform: none;
-        padding: 22px 18px;
-      }
 
       .schedule-block {
         padding: 18px 14px;
@@ -1330,6 +1188,185 @@
         right: 10px;
       }
     }
+    /* MODALIDADES - NOVO VISUAL ESPAÇO M50 */
+
+.modalities .modalities-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+
+.modalities .class-card {
+  display: block;
+  padding: 0;
+  min-height: unset;
+  text-align: left;
+  overflow: hidden;
+  border-radius: 18px;
+  background: #fff;
+  border: 1px solid #ead9dc;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.modalities .class-card.featured {
+  background: var(--red);
+  border-color: var(--red-dark);
+}
+
+.modalities .class-accordion {
+  padding: 0;
+}
+
+.modalities .class-accordion summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 22px;
+  min-height: 90px;
+}
+
+.modalities .class-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.modalities .summary-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.modalities .summary-left span:last-child {
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--red);
+  line-height: 1.2;
+}
+
+.modalities .featured .summary-left span:last-child {
+  color: #fff;
+}
+
+.modalities .class-icon {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 50%;
+  background: var(--red-soft);
+  color: var(--red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 23px;
+  margin: 0;
+}
+
+.modalities .class-card.featured .class-icon {
+  background: rgba(255,255,255,0.18);
+  color: #fff;
+}
+
+.modalities .summary-indicator {
+  font-size: 24px;
+  color: var(--red);
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+
+.modalities .featured .summary-indicator {
+  color: #fff;
+}
+
+.modalities .class-accordion[open] .summary-indicator {
+  transform: rotate(45deg);
+}
+
+.modalities .class-content {
+  padding: 0 22px 24px;
+}
+
+.modalities .class-content p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--text-soft);
+  margin: 0;
+  text-align: left;
+}
+
+.modalities .class-card.featured .class-content p {
+  color: #fff;
+}
+
+.modalities .class-card:not([open]) .class-content {
+  display: none;
+}
+
+.modalities .collective-intro {
+  margin-bottom: 16px !important;
+}
+
+.modalities .collective-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.modalities .collective-list li {
+  background: var(--red-soft);
+  color: var(--red-dark);
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.modalities .unit-note {
+  margin-top: 16px !important;
+  font-size: 12px !important;
+  color: var(--text-faint) !important;
+}
+
+/* TABLETS E CELULARES */
+
+@media (max-width: 780px) {
+  .modalities .modalities-list {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .modalities .class-accordion summary {
+    padding: 18px;
+    min-height: 78px;
+  }
+
+  .modalities .summary-left span:last-child {
+    font-size: 17px;
+  }
+
+  .modalities .class-icon {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    font-size: 20px;
+  }
+
+  .modalities .class-content {
+    padding: 0 18px 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .modalities .collective-list {
+    grid-template-columns: 1fr;
+  }
+}
   </style>
 </head>
 
